@@ -10,14 +10,14 @@ class ProductsTransformer extends Transformer
     /**
      * @var  array
      */
-    protected $defaultIncludes = [
+    protected array $defaultIncludes = [
 
     ];
 
     /**
      * @var  array
      */
-    protected $availableIncludes = [
+    protected array $availableIncludes = [
 
     ];
 
@@ -26,6 +26,10 @@ class ProductsTransformer extends Transformer
         $response = [
             'object' => $products->getResourceKey(),
             'id' => $products->getHashedKey(),
+            'name' => $products->name,
+            'business_id' => $products->business_id,
+            'price' => $products->price,
+            'description' => $products->description,
             'created_at' => $products->created_at,
             'updated_at' => $products->updated_at,
             'readable_created_at' => $products->created_at->diffForHumans(),
