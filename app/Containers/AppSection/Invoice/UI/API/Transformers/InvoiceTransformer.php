@@ -10,14 +10,14 @@ class InvoiceTransformer extends Transformer
     /**
      * @var  array
      */
-    protected $defaultIncludes = [
+    protected array $defaultIncludes = [
 
     ];
 
     /**
      * @var  array
      */
-    protected $availableIncludes = [
+    protected array $availableIncludes = [
 
     ];
 
@@ -26,6 +26,12 @@ class InvoiceTransformer extends Transformer
         $response = [
             'object' => $invoice->getResourceKey(),
             'id' => $invoice->getHashedKey(),
+            'invoice_number' => $invoice->invoice_number,
+            'employee_id' => $invoice->employee_id,
+            'business_id' => $invoice->business_id,
+            'product_id' => $invoice->product_id,
+            'status' => $invoice->status,
+            'Total' => $invoice->Total,
             'created_at' => $invoice->created_at,
             'updated_at' => $invoice->updated_at,
             'readable_created_at' => $invoice->created_at->diffForHumans(),
