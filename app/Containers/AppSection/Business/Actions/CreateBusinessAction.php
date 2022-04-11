@@ -6,6 +6,7 @@ use App\Containers\AppSection\Business\Models\Business;
 use App\Containers\AppSection\Business\Tasks\CreateBusinessTask;
 use App\Ship\Parents\Actions\Action;
 use App\Ship\Parents\Requests\Request;
+use Auth;
 
 class CreateBusinessAction extends Action
 {
