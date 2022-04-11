@@ -18,6 +18,7 @@ class CreateInvoiceAction extends Action
             'employee_id' => $request->employee_id,
             'business_id' => $request->business_id,
             'product_id' => $request->product_id,
+            'price' => $request->price,
             'status' => $request->status,
             'Total' => $request->Total,
         ]);

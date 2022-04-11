@@ -14,10 +14,11 @@ class CreateInvoicesTable extends Migration
             $table->increments('id');
             $table->string('invoice_number')->nullable();
             $table->unsignedInteger('employee_id')->nullable();
-            $table->unsignedInteger('business_id')->nullable();    
-            $table->unsignedInteger('product_id')->nullable(); 
+            $table->unsignedInteger('business_id')->nullable();
+            $table->unsignedInteger('product_id')->nullable();
+            $table->double('price')->nullable();
             $table->string('status')->nullable();
-            $table->double('Total')->nullable();
+            $table->double('total')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('employee_id')->references('id')->on('users')->onDelete('cascade');
