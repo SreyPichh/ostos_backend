@@ -14,7 +14,7 @@ class CreateBusinessAction extends Action
     {
         $data = $request->sanitizeInput([
             // add your request data here
-            'employee_id' => Auth::user()->id,
+//            'employee_id' => Auth::user()->id,
             'name' => $request->name,
             'logo' => $request->logo,
             'address' => $request->address,

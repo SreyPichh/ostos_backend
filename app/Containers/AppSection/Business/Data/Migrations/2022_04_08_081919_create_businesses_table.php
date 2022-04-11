@@ -14,7 +14,7 @@ class CreateBusinessesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->longText('logo')->nullable();
-            $table->string('address')->unique()->nullable();
+            $table->string('address')->nullable();
             $table->string('phone_number')->nullable();
             $table->string('email')->nullable();
             $table->string('aba_name')->nullable();
@@ -27,7 +27,7 @@ class CreateBusinessesTable extends Migration
             $table->longText('instagram_link')->nullable();
             $table->timestamps();
             $table->softDeletes();
-        }); 
+        });
     }
 
     /**
