@@ -45,4 +45,18 @@ class User extends UserModel
         'is_admin' => 'boolean',
         'email_verified_at' => 'datetime',
     ];
+
+    //
+    public function invoice()
+    {
+        return $this->hasMany(Invoice::class, 'user_id', 'id');
+    }
+    public function business()
+    {
+        return $this->hasMany(Business::class, 'user_id', 'id');
+    }
+    public function product()
+    {
+        return $this->hasMany(Product::class, 'user_id', 'id');
+    }
 }
