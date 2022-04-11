@@ -13,6 +13,13 @@ class UpdateInvoiceAction extends Action
     {
         $data = $request->sanitizeInput([
             // add your request data here
+            'invoice_number',
+            'employee_id',
+            'business_id',
+            'product_id',
+            'price',
+            'status',
+            'Total',
         ]);
 
         return app(UpdateInvoiceTask::class)->run($request->id, $data);

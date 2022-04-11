@@ -13,6 +13,11 @@ class UpdateProductsAction extends Action
     {
         $data = $request->sanitizeInput([
             // add your request data here
+            'employee_id',
+            'name',
+            'business_id',
+            'price',
+            'description'
         ]);
 
         return app(UpdateProductsTask::class)->run($request->id, $data);
