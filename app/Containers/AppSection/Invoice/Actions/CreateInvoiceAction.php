@@ -6,6 +6,7 @@ use App\Containers\AppSection\Invoice\Models\Invoice;
 use App\Containers\AppSection\Invoice\Tasks\CreateInvoiceTask;
 use App\Ship\Parents\Actions\Action;
 use App\Ship\Parents\Requests\Request;
+use Auth;
 
 class CreateInvoiceAction extends Action
 {
