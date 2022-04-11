@@ -35,14 +35,6 @@ class Products extends Model
      */
     protected string $resourceKey = 'Products';
 
-    public function users()
-    {
-        return $this->belongsTo(User::class, 'product_id', 'id');
-    }
-    public function invoice()
-    {
-       return $this->belongsTo(Invoice::class, 'product_id', 'id');
-    }
     public function business()
     {   
         return $this->belongsTo(Business::class, 'product_id', 'id');

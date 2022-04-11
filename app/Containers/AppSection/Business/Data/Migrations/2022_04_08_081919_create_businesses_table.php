@@ -27,7 +27,7 @@ class CreateBusinessesTable extends Migration
             $table->longText('instagram_link')->nullable();
             $table->timestamps();
             $table->softDeletes();
-        });
+        }); 
     }
 
     /**

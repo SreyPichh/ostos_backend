@@ -49,14 +49,7 @@ class User extends UserModel
     //
     public function invoice()
     {
-        return $this->hasMany(Invoice::class, 'user_id', 'id');
+        return $this->hasMany(Invoice::class, 'employee_id', 'id');
     }
-    public function business()
-    {
-        return $this->hasMany(Business::class, 'user_id', 'id');
-    }
-    public function product()
-    {
-        return $this->hasMany(Product::class, 'user_id', 'id');
-    }
+    
 }

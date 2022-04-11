@@ -44,10 +44,6 @@ class Business extends Model
      */
     protected string $resourceKey = 'Business';
 
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'business_id', 'id');
-    }
     public function product()
     {
         return $this->hasMany(Product::class, 'business_id', 'id');
