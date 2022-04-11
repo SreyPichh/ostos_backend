@@ -26,8 +26,8 @@ class RegisterUserAction extends Action
             $request->birth
         );
 
-        Mail::send(new UserRegisteredMail($user));
-        Notification::send($user, new UserRegisteredNotification($user));
+        // Mail::send(new UserRegisteredMail($user));
+        // Notification::send($user, new UserRegisteredNotification($user));
         app(Dispatcher::class)->dispatch(new UserRegisteredEvent($user));
 
         return $user;

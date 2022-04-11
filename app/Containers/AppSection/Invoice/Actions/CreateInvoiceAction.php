@@ -13,6 +13,13 @@ class CreateInvoiceAction extends Action
     {
         $data = $request->sanitizeInput([
             // add your request data here
+            'employee_id' => Auth::user()->id,
+            'invoice_number' => $request->invoice_number,
+            'employee_id' => $request->employee_id,
+            'business_id' => $request->business_id,
+            'product_id' => $request->product_id,
+            'status' => $request->status,
+            'Total' => $request->Total,
         ]);
 
         return app(CreateInvoiceTask::class)->run($data);

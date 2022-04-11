@@ -36,6 +36,11 @@ class CreateProductsRequest extends Request
     {
         return [
             // 'id' => 'required'
+
+            'name' => 'required',
+            'business_id' => 'required',
+            'price' => 'required',
+            'description' => 'required',
         ];
     }
 

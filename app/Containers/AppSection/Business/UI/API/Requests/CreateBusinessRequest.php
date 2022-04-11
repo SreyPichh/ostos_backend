@@ -36,6 +36,16 @@ class CreateBusinessRequest extends Request
     {
         return [
             // 'id' => 'required'
+            'name' => 'required',
+            'logo' => 'required',
+            'address' => 'required',
+            'phone_number' => 'required',
+            'aba_name' => 'required',
+            'acc_number' => 'required',
+            'qr_code' => 'required',
+            'invoice_toptext' => 'required',
+            'invoice_note' => 'required',
+            'digital_sign' => 'required',
         ];
     }
 

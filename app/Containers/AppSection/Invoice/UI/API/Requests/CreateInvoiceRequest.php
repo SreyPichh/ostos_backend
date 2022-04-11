@@ -36,6 +36,13 @@ class CreateInvoiceRequest extends Request
     {
         return [
             // 'id' => 'required'
+            'invoice_number' => 'required',
+            'employee_id' => 'required',
+            'business_id' => 'required',
+            'product_id' => 'required',
+            'status' => 'required',
+            'Total' => 'required',
+            
         ];
     }
 
