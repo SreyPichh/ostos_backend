@@ -13,6 +13,7 @@ use App\Containers\AppSection\Products\Actions\FindProductsByIdAction;
 use App\Containers\AppSection\Products\Actions\GetAllProductsAction;
 use App\Containers\AppSection\Products\Actions\UpdateProductsAction;
 use App\Containers\AppSection\Products\Actions\DeleteProductsAction;
+use App\Containers\AppSection\RecentAction\Actions\CreateRecentActionAction;
 use App\Ship\Parents\Controllers\ApiController;
 use Illuminate\Http\JsonResponse;
 
@@ -21,6 +22,9 @@ class Controller extends ApiController
     public function createProducts(CreateProductsRequest $request): JsonResponse
     {
         $products = app(CreateProductsAction::class)->run($request);
+        $type_action = 'Post';
+        $action_label = 'Product';
+        app(CreateRecentActionAction::class)->run($products->id, $type_action, $action_label);
         return $this->created($this->transform($products, ProductsTransformer::class));
     }
 
@@ -39,6 +43,9 @@ class Controller extends ApiController
     public function updateProducts(UpdateProductsRequest $request): array
     {
         $products = app(UpdateProductsAction::class)->run($request);
+        $type_action = 'Update';
+        $action_label = 'Product';
+        app(CreateRecentActionAction::class)->run($products->id, $type_action, $action_label);
         return $this->transform($products, ProductsTransformer::class);
     }
 

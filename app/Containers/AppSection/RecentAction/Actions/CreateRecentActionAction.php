@@ -9,12 +9,14 @@ use App\Ship\Parents\Requests\Request;
 
 class CreateRecentActionAction extends Action
 {
-    public function run(Request $request): RecentAction
+    public function run($id, $type_action,$action_label): RecentAction
     {
-        $data = $request->sanitizeInput([
-            // add your request data here
-        ]);
 
+        $data = [
+            'action_id'=>$id,
+            'type_action'=>$type_action,
+            'action_label' => $action_label
+        ];
         return app(CreateRecentActionTask::class)->run($data);
     }
 }

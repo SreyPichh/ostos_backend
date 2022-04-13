@@ -16,6 +16,6 @@ class GetAllRecentActionsTask extends Task
 
     public function run()
     {
-        return $this->repository->paginate();
+        return $this->repository->orderBy('created_at', 'desc')->paginate();
     }
 }

@@ -13,6 +13,8 @@ use App\Containers\AppSection\Business\Actions\FindBusinessByIdAction;
 use App\Containers\AppSection\Business\Actions\GetAllBusinessesAction;
 use App\Containers\AppSection\Business\Actions\UpdateBusinessAction;
 use App\Containers\AppSection\Business\Actions\DeleteBusinessAction;
+use App\Containers\AppSection\Invoice\Actions\CreateInvoiceAction;
+use App\Containers\AppSection\RecentAction\Actions\CreateRecentActionAction;
 use App\Ship\Parents\Controllers\ApiController;
 use Illuminate\Http\JsonResponse;
 
@@ -21,6 +23,9 @@ class Controller extends ApiController
     public function createBusiness(CreateBusinessRequest $request): JsonResponse
     {
         $business = app(CreateBusinessAction::class)->run($request);
+        $type_action = 'Post';
+        $action_label = 'Business';
+        app(CreateRecentActionAction::class)->run($business->id,$type_action,$action_label);
         return $this->created($this->transform($business, BusinessTransformer::class));
     }
 
@@ -39,6 +44,9 @@ class Controller extends ApiController
     public function updateBusiness(UpdateBusinessRequest $request): array
     {
         $business = app(UpdateBusinessAction::class)->run($request);
+        $type_action = 'Update';
+        $action_label = 'Business';
+        app(CreateRecentActionAction::class)->run($business->id,$type_action,$action_label);
         return $this->transform($business, BusinessTransformer::class);
     }
 

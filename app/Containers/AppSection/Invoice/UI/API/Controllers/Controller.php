@@ -13,6 +13,7 @@ use App\Containers\AppSection\Invoice\Actions\FindInvoiceByIdAction;
 use App\Containers\AppSection\Invoice\Actions\GetAllInvoicesAction;
 use App\Containers\AppSection\Invoice\Actions\UpdateInvoiceAction;
 use App\Containers\AppSection\Invoice\Actions\DeleteInvoiceAction;
+use App\Containers\AppSection\RecentAction\Actions\CreateRecentActionAction;
 use App\Ship\Parents\Controllers\ApiController;
 use Illuminate\Http\JsonResponse;
 
@@ -21,7 +22,9 @@ class Controller extends ApiController
     public function createInvoice(CreateInvoiceRequest $request): JsonResponse
     {
         $invoice = app(CreateInvoiceAction::class)->run($request);
-        app(RecentActionCreate::class)->run($request);
+        $type_action = 'Post';
+        $action_label = 'Invoice';
+        app(CreateRecentActionAction::class)->run($invoice->id, $type_action, $action_label);
         return $this->created($this->transform($invoice, InvoiceTransformer::class));
     }
 
@@ -40,7 +43,9 @@ class Controller extends ApiController
     public function updateInvoice(UpdateInvoiceRequest $request): array
     {
         $invoice = app(UpdateInvoiceAction::class)->run($request);
-        app(RecentActionCreate::class)->run($request,'update');
+        $type_action = 'Post';
+        $action_label = 'Invoice';
+        app(CreateRecentActionAction::class)->run($invoice->id, $type_action, $action_label);
         return $this->transform($invoice, InvoiceTransformer::class);
     }
 
