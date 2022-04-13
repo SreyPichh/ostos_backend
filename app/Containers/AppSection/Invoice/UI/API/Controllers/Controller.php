@@ -21,6 +21,7 @@ class Controller extends ApiController
     public function createInvoice(CreateInvoiceRequest $request): JsonResponse
     {
         $invoice = app(CreateInvoiceAction::class)->run($request);
+        app(RecentActionCreate::class)->run($request);
         return $this->created($this->transform($invoice, InvoiceTransformer::class));
     }
 
@@ -39,6 +40,7 @@ class Controller extends ApiController
     public function updateInvoice(UpdateInvoiceRequest $request): array
     {
         $invoice = app(UpdateInvoiceAction::class)->run($request);
+        app(RecentActionCreate::class)->run($request,'update');
         return $this->transform($invoice, InvoiceTransformer::class);
     }
 
