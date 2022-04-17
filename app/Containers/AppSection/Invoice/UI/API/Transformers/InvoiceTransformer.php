@@ -30,7 +30,7 @@ class InvoiceTransformer extends Transformer
             'employee_id' => $invoice->employee_id,
             'business_id' => $invoice->business_id,
             'product_id' => $invoice->product_id,
-            'price' => $invoice->price,
+            'customer_name' => $invoice->customer_name,
             'status' => $invoice->status,
             'Total' => $invoice->Total,
             'created_at' => $invoice->created_at,

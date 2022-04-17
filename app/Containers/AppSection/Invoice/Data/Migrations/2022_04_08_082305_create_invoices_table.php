@@ -16,7 +16,7 @@ class CreateInvoicesTable extends Migration
             $table->unsignedInteger('employee_id')->nullable();
             $table->unsignedInteger('business_id')->nullable();
             $table->unsignedInteger('product_id')->nullable();
-            $table->double('price')->nullable();
+            $table->string('customer_name')->nullable();
             $table->string('status')->nullable();
             $table->double('total')->nullable();
             $table->timestamps();
