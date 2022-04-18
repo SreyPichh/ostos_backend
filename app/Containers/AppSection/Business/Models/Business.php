@@ -10,16 +10,14 @@ class Business extends Model
         'name',
         'logo',
         'address',
-        'phone_number',
+        'phone_number1',
         'email',
         'aba_name',
         'acc_number',
         'qr_code',
         'invoice_toptext',
         'invoice_note',
-        'digital_sign',
-        'facebook_link',
-        'instagram_link'
+        'digital_sign'
     ];
 
     protected $attributes = [
@@ -27,7 +25,7 @@ class Business extends Model
     ];
 
     protected $hidden = [
-        
+
     ];
 
     protected $casts = [

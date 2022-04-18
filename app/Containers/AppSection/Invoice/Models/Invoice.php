@@ -12,6 +12,7 @@ class Invoice extends Model
         'business_id',
         'product_id',
         'customer_name',
+        'customer_phone_number',
         'status',
         'Total'
     ];

@@ -15,8 +15,11 @@ class CreateBusinessesTable extends Migration
             $table->string('name');
             $table->longText('logo')->nullable();
             $table->string('address')->nullable();
-            $table->string('phone_number')->nullable();
+            $table->string('phone_number1')->nullable();
+            $table->string('phone_number2')->nullable();
+            $table->string('phone_number3')->nullable();
             $table->string('email')->nullable();
+            $table->string('telegram')->nullable();
             $table->string('aba_name')->nullable();
             $table->string('acc_number')->nullable();
             $table->longText('qr_code')->nullable();

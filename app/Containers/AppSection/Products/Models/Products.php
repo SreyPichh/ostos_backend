@@ -9,8 +9,7 @@ class Products extends Model
     protected $fillable = [
         'name',
         'business_id',
-        'price',
-        'description'
+        'price'
     ];
 
     protected $attributes = [
@@ -36,7 +35,7 @@ class Products extends Model
     protected string $resourceKey = 'Products';
 
     public function business()
-    {   
+    {
         return $this->belongsTo(Business::class, 'product_id', 'id');
     }
 }
