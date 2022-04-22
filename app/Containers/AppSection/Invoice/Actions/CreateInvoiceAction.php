@@ -29,8 +29,7 @@ class CreateInvoiceAction extends Action
             'status' => $request->status,
             'total' => $request->total
         ];
-//        dd($data);
-//        dd(json_encode($request->employee_data));
+
 //        $data = $request->sanitizeInput([
 //            // add your request data here
 //            'invoice_number' => $request->invoice_number,
