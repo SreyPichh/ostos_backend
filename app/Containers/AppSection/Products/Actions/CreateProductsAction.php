@@ -14,9 +14,9 @@ class CreateProductsAction extends Action
     {
         $data = $request->sanitizeInput([
             // add your request data here
-            'employee_id' => Auth::user()->id,
             'name' => $request->name,
             'business_id' => $request->business_id,
+            'isActive' => $request->isActive,
             'price' => $request->price,
             'description' => $request->description,
         ]);

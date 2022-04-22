@@ -11,5 +11,6 @@ class AuthorizationRolesSeeder_2 extends Seeder
     {
         // Default Roles ----------------------------------------------------------------
         app(CreateRoleTask::class)->run('admin', 'Administrator', 'Administrator Role', 999);
+        app(CreateRoleTask::class)->run('employee', 'Employee', 'Employee Role', 300);
     }
 }

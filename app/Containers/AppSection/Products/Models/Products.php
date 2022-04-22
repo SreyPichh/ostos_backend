@@ -2,6 +2,8 @@
 
 namespace App\Containers\AppSection\Products\Models;
 
+use App\Containers\AppSection\Business\Models\Business;
+use App\Containers\AppSection\Category\Models\Category;
 use App\Ship\Parents\Models\Model;
 
 class Products extends Model
@@ -9,7 +11,9 @@ class Products extends Model
     protected $fillable = [
         'name',
         'business_id',
-        'price'
+        'isActive',
+        'price',
+        'description'
     ];
 
     protected $attributes = [
@@ -33,6 +37,7 @@ class Products extends Model
      * A resource key to be used in the serialized responses.
      */
     protected string $resourceKey = 'Products';
+
 
     public function business()
     {

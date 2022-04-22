@@ -8,13 +8,19 @@ class Invoice extends Model
 {
     protected $fillable = [
         'invoice_number',
-        'employee_id',
+        'type',
+        'date',
+        'due_amount',
+        'employee_data',
         'business_id',
-        'product_id',
+        'product_data',
         'customer_name',
+        'customer_email',
         'customer_phone_number',
+        'customer_address1',
+        'customer_address2',
         'status',
-        'Total'
+        'total'
     ];
 
     protected $attributes = [
@@ -39,16 +45,10 @@ class Invoice extends Model
      */
     protected string $resourceKey = 'Invoice';
 
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'invoice_id', 'id');
-    }
+
     public function business()
     {
         return $this->belongsTo(Business::class, 'invoice_id', 'id');
     }
-    public function product()
-    {
-        return $this->hasMany(Product::class, 'invoice_id', 'id');
-    }
+
 }

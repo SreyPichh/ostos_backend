@@ -13,7 +13,8 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->nullable();
-            $table->unsignedInteger('business_id')->nullable();    
+            $table->unsignedInteger('business_id')->nullable();
+            $table->boolean('isActive');
             $table->double('price');
             $table->longText('description')->nullable();
             $table->timestamps();

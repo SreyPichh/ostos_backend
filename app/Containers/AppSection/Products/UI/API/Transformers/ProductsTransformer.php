@@ -28,6 +28,7 @@ class ProductsTransformer extends Transformer
             'id' => $products->getHashedKey(),
             'name' => $products->name,
             'business_id' => $products->business_id,
+            'isActive' => $products->isActive,
             'price' => $products->price,
             'description' => $products->description,
             'created_at' => $products->created_at,

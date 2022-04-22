@@ -12,10 +12,13 @@ class CreateInvoicesTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('invoice_number')->nullable();
-            $table->unsignedInteger('employee_id')->nullable();
+            $table->string('invoice_number')->unique()->nullable();
+            $table->string('type')->nullable();
+            $table->timestamp('date')->nullable();
+            $table->double('due_amount')->nullable();
+            $table->longText('employee_data')->nullable();
             $table->unsignedInteger('business_id')->nullable();
-            $table->unsignedInteger('product_id')->nullable();
+            $table->longText('product_data')->nullable();
             $table->string('customer_name')->nullable();
             $table->string('customer_email')->nullable();
             $table->string('customer_phone_number')->nullable();
@@ -25,9 +28,7 @@ class CreateInvoicesTable extends Migration
             $table->double('total')->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('employee_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('business_id')->references('id')->on('businesses')->onDelete('cascade');
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             //onDelete = when we delete user id ? the invoice belong to id ? will auto delete
         });
     }

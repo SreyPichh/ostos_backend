@@ -32,6 +32,8 @@ class Controller extends ApiController
     public function registerUser(RegisterUserRequest $request): array
     {
         $user = app(RegisterUserAction::class)->run($request);
+        $role = 2 ;
+        $user->assignRole([$role]);
         return $this->transform($user, UserTransformer::class);
     }
 

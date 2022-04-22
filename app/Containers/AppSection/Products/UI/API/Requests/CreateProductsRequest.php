@@ -39,8 +39,7 @@ class CreateProductsRequest extends Request
 
             'name' => 'required',
             'business_id' => 'required',
-            'price' => 'required',
-            'description' => 'required',
+            'isActive' => 'required'
         ];
     }
 

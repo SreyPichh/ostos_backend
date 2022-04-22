@@ -2,6 +2,7 @@
 
 namespace App\Containers\AppSection\Business\UI\API\Controllers;
 
+use App\Containers\AppSection\Business\Actions\GetAllBusinessWithCategoriesAction;
 use App\Containers\AppSection\Business\UI\API\Requests\CreateBusinessRequest;
 use App\Containers\AppSection\Business\UI\API\Requests\DeleteBusinessRequest;
 use App\Containers\AppSection\Business\UI\API\Requests\GetAllBusinessesRequest;
@@ -13,6 +14,7 @@ use App\Containers\AppSection\Business\Actions\FindBusinessByIdAction;
 use App\Containers\AppSection\Business\Actions\GetAllBusinessesAction;
 use App\Containers\AppSection\Business\Actions\UpdateBusinessAction;
 use App\Containers\AppSection\Business\Actions\DeleteBusinessAction;
+use App\Containers\AppSection\Business\UI\API\Transformers\BusinessWithCategoriesTransformer;
 use App\Containers\AppSection\Invoice\Actions\CreateInvoiceAction;
 use App\Containers\AppSection\RecentAction\Actions\CreateRecentActionAction;
 use App\Ship\Parents\Controllers\ApiController;
@@ -39,6 +41,11 @@ class Controller extends ApiController
     {
         $businesses = app(GetAllBusinessesAction::class)->run($request);
         return $this->transform($businesses, BusinessTransformer::class);
+    }
+    public function getAllBusinessWithCategories(GetAllBusinessesRequest $request): array
+    {
+        $businesses = app(GetAllBusinessWithCategoriesAction::class)->run($request);
+        return $this->transform($businesses, BusinessWithCategoriesTransformer::class);
     }
 
     public function updateBusiness(UpdateBusinessRequest $request): array
