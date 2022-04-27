@@ -28,6 +28,8 @@ class CreateBusinessAction extends Action
             'qr_code' => $request->qr_code,
             'invoice_toptext' =>$request->invoice_toptext,
             'invoice_note' => $request->invoice_note,
+            'personal_info' => $request->personal_info,
+            'quote_note' => $request->quote_note,
             'digital_sign' => $request->digital_sign,
             'facebook_link' => $request->facebook_link,
             'instagram_link' => $request->instagram_link

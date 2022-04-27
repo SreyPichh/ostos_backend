@@ -15,6 +15,7 @@ class CreateProductsTable extends Migration
             $table->string('name')->nullable();
             $table->unsignedInteger('business_id')->nullable();
             $table->boolean('isActive');
+//            $table->boolean('isFavorite');
             $table->double('price');
             $table->longText('description')->nullable();
             $table->timestamps();

@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @apiGroup           Business
- * @apiName            
+ * @apiGroup           Products
+ * @apiName            getAllFilterProducts
  *
- * @api                {GET} /v1/ Endpoint title here..
+ * @api                {GET} /v1/products Endpoint title here..
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0
@@ -19,10 +19,10 @@
 }
  */
 
-use App\Containers\AppSection\Business\UI\API\Controllers\Controller;
+use App\Containers\AppSection\Products\UI\API\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
-Route::get('business_with_categories', [Controller::class, 'getAllBusinessWithCategories'])
-    ->name('api_business_get_all_business_with_categories')
+Route::get('products_filter', [Controller::class, 'getAllFilterProducts'])
+    ->name('api_products_get_all_filter_products')
     ->middleware(['auth:api']);
 

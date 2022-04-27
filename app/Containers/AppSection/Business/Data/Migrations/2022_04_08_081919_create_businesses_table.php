@@ -25,6 +25,8 @@ class CreateBusinessesTable extends Migration
             $table->longText('qr_code')->nullable();
             $table->longText('invoice_toptext')->nullable();
             $table->longText('invoice_note')->nullable();
+            $table->longText('personal_info')->nullable();
+            $table->longText('quote_note')->nullable();
             $table->longText('digital_sign')->nullable();
             $table->longText('facebook_link')->nullable();
             $table->longText('instagram_link')->nullable();

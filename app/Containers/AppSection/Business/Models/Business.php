@@ -2,7 +2,8 @@
 
 namespace App\Containers\AppSection\Business\Models;
 
-use App\Containers\AppSection\Category\Models\Category;
+use App\Containers\AppSection\Invoice\Models\Invoice;
+use App\Containers\AppSection\Products\Models\Products;
 use App\Ship\Parents\Models\Model;
 
 class Business extends Model
@@ -21,6 +22,8 @@ class Business extends Model
         'qr_code',
         'invoice_toptext',
         'invoice_note',
+        'personal_info',
+        'quote_note',
         'digital_sign',
         'facebook_link',
         'instagram_link'
@@ -48,14 +51,10 @@ class Business extends Model
      */
     protected string $resourceKey = 'Business';
 
-    public function category()
-    {
-        return $this->hasMany(Category::class, 'business_id', 'id');
-    }
 
     public function product()
     {
-        return $this->hasManyThrough(Product::class, Category::class);
+        return $this->hasMany(Products::class,'business_id','id');
     }
 
     public function invoice()

@@ -35,11 +35,20 @@ class UpdateUserRequest extends Request
     public function rules(): array
     {
         return [
-            'id' => 'required|exists:users,id',
-            'password' => 'min:6|max:40',
-            'name' => 'min:2|max:50',
-            'gender' => 'in:male,female,unspecified',
-            'birth' => 'date_format:Ymd',
+//            'id' => 'required|exists:users,id',
+//            'password' => 'min:6|max:40',
+//            'name' => 'min:2|max:50',
+//            'gender' => 'in:male,female,unspecified',
+//            'birth' => 'date_format:Ymd',
+
+//            'email' => 'required|email|max:40|unique:users,email',
+//            'password' => 'required|min:6|max:30',
+//            'name' => 'required|min:2|max:50',
+//            'f_name' => 'required|min:2|max:50',
+//            'l_name' => 'required|min:2|max:50',
+//            'first_address' => 'required|min:6|max:1500',
+//            'gender' => 'in:male,female,unspecified',
+//            'birth' => 'date_format:Ymd',
         ];
     }
 

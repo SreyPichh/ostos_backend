@@ -22,7 +22,7 @@
 use App\Containers\AppSection\Invoice\UI\API\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
-Route::patch('invoices/{id}', [Controller::class, 'updateInvoice'])
+Route::put('invoices/{id}', [Controller::class, 'updateInvoice'])
     ->name('api_invoice_update_invoice')
     ->middleware(['auth:api']);
 

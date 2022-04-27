@@ -4,6 +4,7 @@ namespace App\Containers\AppSection\User\Models;
 
 use App\Containers\AppSection\Authentication\Traits\AuthenticationTrait;
 use App\Containers\AppSection\Authorization\Traits\AuthorizationTrait;
+use App\Containers\AppSection\Invoice\Models\Invoice;
 use App\Ship\Parents\Models\UserModel;
 use Illuminate\Notifications\Notifiable;
 
@@ -17,11 +18,15 @@ class User extends UserModel
 
     protected $fillable = [
         'name',
+        'f_name',
+        'l_name',
         'email',
         'password',
         'device',
         'platform',
         'gender',
+        'first_address',
+        'second_address',
         'birth',
         'social_provider',
         'social_token',
@@ -51,5 +56,5 @@ class User extends UserModel
     {
         return $this->hasMany(Invoice::class, 'employee_id', 'id');
     }
-    
+
 }

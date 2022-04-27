@@ -14,7 +14,11 @@ class UpdateUserAction extends Action
         $sanitizedData = $request->sanitizeInput([
             'password',
             'name',
+            'f_name',
+            'l_name',
             'gender',
+            'first_address',
+            'second_address',
             'birth',
             'social_token',
             'social_expires_in',

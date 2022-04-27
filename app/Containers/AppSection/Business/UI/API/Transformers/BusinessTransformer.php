@@ -3,7 +3,9 @@
 namespace App\Containers\AppSection\Business\UI\API\Transformers;
 
 use App\Containers\AppSection\Business\Models\Business;
+use App\Containers\AppSection\Products\UI\API\Transformers\ProductsTransformer;
 use App\Ship\Parents\Transformers\Transformer;
+use League\Fractal\Resource\Collection;
 
 class BusinessTransformer extends Transformer
 {
@@ -18,7 +20,7 @@ class BusinessTransformer extends Transformer
      * @var  array
      */
     protected array $availableIncludes = [
-
+        'product'
     ];
 
     public function transform(Business $business): array
@@ -39,6 +41,8 @@ class BusinessTransformer extends Transformer
             'qr_code' => $business->qr_code,
             'invoice_toptext' => $business->invoice_toptext,
             'invoice_note' => $business->invoice_note,
+            'personal_info' => $business->personal_info,
+            'quote_note' => $business->quote_note,
             'digital_sign' => $business->digital_sign,
             'facebook_link' => $business->facebook_link,
             'instagram_link' => $business->instagram_link,
@@ -52,5 +56,9 @@ class BusinessTransformer extends Transformer
             'real_id'    => $business->id,
             // 'deleted_at' => $business->deleted_at,
         ], $response);
+    }
+    public function includeProduct(Business $business): Collection
+    {
+        return $this->collection($business->product, new ProductsTransformer());
     }
 }

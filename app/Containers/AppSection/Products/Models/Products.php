@@ -12,6 +12,7 @@ class Products extends Model
         'name',
         'business_id',
         'isActive',
+//        'isFavorite',
         'price',
         'description'
     ];
@@ -39,8 +40,8 @@ class Products extends Model
     protected string $resourceKey = 'Products';
 
 
-    public function business()
-    {
-        return $this->belongsTo(Business::class, 'product_id', 'id');
-    }
+//    public function business()
+//    {
+//        return $this->belongsTo(Business::class, 'id', 'id');
+//    }
 }

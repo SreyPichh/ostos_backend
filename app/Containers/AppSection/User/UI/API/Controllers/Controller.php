@@ -2,6 +2,7 @@
 
 namespace App\Containers\AppSection\User\UI\API\Controllers;
 
+use App\Containers\AppSection\RecentAction\Actions\CreateRecentActionAction;
 use App\Containers\AppSection\User\Actions\CreateAdminAction;
 use App\Containers\AppSection\User\Actions\DeleteUserAction;
 use App\Containers\AppSection\User\Actions\FindUserByIdAction;
@@ -34,6 +35,9 @@ class Controller extends ApiController
         $user = app(RegisterUserAction::class)->run($request);
         $role = 2 ;
         $user->assignRole([$role]);
+        $type_action = 'Create Employee';
+        $action_label = 'Management';
+        app(CreateRecentActionAction::class)->run($user->id, $type_action, $action_label);
         return $this->transform($user, UserTransformer::class);
     }
 

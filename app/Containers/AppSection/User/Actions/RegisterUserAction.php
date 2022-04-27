@@ -22,7 +22,11 @@ class RegisterUserAction extends Action
             $request->email,
             $request->password,
             $request->name,
+            $request->f_name,
+            $request->l_name,
             $request->gender,
+            $request->first_address,
+            $request->second_address,
             $request->birth
         );
 

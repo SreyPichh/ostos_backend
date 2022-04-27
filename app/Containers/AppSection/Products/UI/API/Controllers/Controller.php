@@ -2,11 +2,14 @@
 
 namespace App\Containers\AppSection\Products\UI\API\Controllers;
 
+use App\Containers\AppSection\Products\Actions\GetAllFilterProductAction;
 use App\Containers\AppSection\Products\UI\API\Requests\CreateProductsRequest;
 use App\Containers\AppSection\Products\UI\API\Requests\DeleteProductsRequest;
+use App\Containers\AppSection\Products\UI\API\Requests\GetAllFilterProducts;
 use App\Containers\AppSection\Products\UI\API\Requests\GetAllProductsRequest;
 use App\Containers\AppSection\Products\UI\API\Requests\FindProductsByIdRequest;
 use App\Containers\AppSection\Products\UI\API\Requests\UpdateProductsRequest;
+use App\Containers\AppSection\Products\UI\API\Transformers\GetAllFilterProductTransformer;
 use App\Containers\AppSection\Products\UI\API\Transformers\ProductsTransformer;
 use App\Containers\AppSection\Products\Actions\CreateProductsAction;
 use App\Containers\AppSection\Products\Actions\FindProductsByIdAction;
@@ -37,6 +40,12 @@ class Controller extends ApiController
     public function getAllProducts(GetAllProductsRequest $request): array
     {
         $products = app(GetAllProductsAction::class)->run($request);
+        return $this->transform($products, ProductsTransformer::class);
+    }
+
+    public function getAllFilterProducts(GetAllProductsRequest $request) : array
+    {
+        $products = app(GetAllFilterProductAction::class)->run($request);
         return $this->transform($products, ProductsTransformer::class);
     }
 

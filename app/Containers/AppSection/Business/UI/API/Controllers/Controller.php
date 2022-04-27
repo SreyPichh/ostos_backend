@@ -42,11 +42,6 @@ class Controller extends ApiController
         $businesses = app(GetAllBusinessesAction::class)->run($request);
         return $this->transform($businesses, BusinessTransformer::class);
     }
-    public function getAllBusinessWithCategories(GetAllBusinessesRequest $request): array
-    {
-        $businesses = app(GetAllBusinessWithCategoriesAction::class)->run($request);
-        return $this->transform($businesses, BusinessWithCategoriesTransformer::class);
-    }
 
     public function updateBusiness(UpdateBusinessRequest $request): array
     {
