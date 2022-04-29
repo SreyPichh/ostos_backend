@@ -13,7 +13,7 @@ class CreateInvoicesTable extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->increments('id');
             $table->string('invoice_number')->unique()->nullable();
-            $table->string('type')->nullable();
+            $table->enum('type', ['receipt', 'invoice'])->nullable();
             $table->timestamp('date')->nullable();
             $table->double('due_amount')->nullable();
             $table->longText('employee_data')->nullable();
@@ -24,7 +24,7 @@ class CreateInvoicesTable extends Migration
             $table->string('customer_phone_number')->nullable();
             $table->string('customer_address1')->nullable();
             $table->string('customer_address2')->nullable();
-            $table->string('status')->nullable();
+            $table->enum('status', ['paid', 'unpaid', 'partial_billed'])->nullable();
             $table->double('total')->nullable();
             $table->timestamps();
             $table->softDeletes();
