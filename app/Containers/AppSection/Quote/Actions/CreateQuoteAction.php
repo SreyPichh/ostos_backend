@@ -14,11 +14,9 @@ class CreateQuoteAction extends Action
         $data = $request->sanitizeInput([
             // add your request data here
             'date' => $request->date,
-            'received_from' => $request->received_from,
-            'sumOf' => $request->sumOf,
-            'paymentOf' => $request->paymentOf,
-            'amount' => $request->amount,
-            'type' => $request->type
+            'quote_to' => $request->quote_to,
+            'product_data' => json_encode($request->product_data),
+            'total' => $request->total,
         ]);
 
         return app(CreateQuoteTask::class)->run($data);

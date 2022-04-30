@@ -8,11 +8,9 @@ class Quote extends Model
 {
     protected $fillable = [
         'date',
-        'received_from',
-        'sumOf',
-        'paymentOf',
-        'amount',
-        'type'
+        'quote_to',
+        'product_data',
+        'total'
     ];
 
     protected $attributes = [

@@ -13,11 +13,9 @@ class CreateQuotesTable extends Migration
         Schema::create('quotes', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamp('date')->nullable();
-            $table->string('received_from')->nullable();
-            $table->string('sumOf')->nullable();
-            $table->string('paymentOf')->nullable();
-            $table->double('amount')->nullable();
-            $table->enum('type', ['cash', 'cheque'])->nullable();
+            $table->string('quote_to')->nullable();
+            $table->longText('product_data')->nullable();
+            $table->double('total')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
