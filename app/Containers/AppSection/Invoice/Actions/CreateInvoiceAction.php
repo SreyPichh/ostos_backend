@@ -15,7 +15,6 @@ class CreateInvoiceAction extends Action
         $data =[
             // add your request data here
             'invoice_number' => $request->invoice_number,
-            'type'=> $request->type,
             'date' => $request->date,
             'due_amount' => $request->due_amount,
             'employee_data' => json_encode($request->employee_data),

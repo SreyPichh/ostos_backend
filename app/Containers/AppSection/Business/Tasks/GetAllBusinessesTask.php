@@ -16,6 +16,6 @@ class GetAllBusinessesTask extends Task
 
     public function run()
     {
-        return $this->repository->get();
+        return $this->repository->paginate();
     }
 }

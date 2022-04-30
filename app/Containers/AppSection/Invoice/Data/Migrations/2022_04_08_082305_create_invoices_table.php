@@ -13,7 +13,6 @@ class CreateInvoicesTable extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->increments('id');
             $table->string('invoice_number')->unique()->nullable();
-            $table->enum('type', ['receipt', 'invoice'])->nullable();
             $table->timestamp('date')->nullable();
             $table->double('due_amount')->nullable();
             $table->longText('employee_data')->nullable();

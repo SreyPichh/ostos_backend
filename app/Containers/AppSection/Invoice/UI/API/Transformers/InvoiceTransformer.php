@@ -27,7 +27,6 @@ class InvoiceTransformer extends Transformer
             'object' => $invoice->getResourceKey(),
             'id' => $invoice->getHashedKey(),
             'invoice_number' => $invoice->invoice_number,
-            'type' => $invoice->type,
             'date' => $invoice->date,
             'due_amount' => $invoice->due_amount,
             'employee_data' => json_decode($invoice->employee_data),

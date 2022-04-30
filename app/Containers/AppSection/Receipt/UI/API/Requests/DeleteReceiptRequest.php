@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Containers\AppSection\Quote\UI\API\Requests;
+namespace App\Containers\AppSection\Receipt\UI\API\Requests;
 
 use App\Ship\Parents\Requests\Request;
 
-class CreateQuoteRequest extends Request
+class DeleteReceiptRequest extends Request
 {
     /**
      * Define which Roles and/or Permissions has access to this request.
@@ -18,7 +18,7 @@ class CreateQuoteRequest extends Request
      * Id's that needs decoding before applying the validation rules.
      */
     protected array $decode = [
-        // 'id',
+        'id',
     ];
 
     /**
@@ -26,7 +26,7 @@ class CreateQuoteRequest extends Request
      * validation rules on them and allows accessing them like request data.
      */
     protected array $urlParameters = [
-        // 'id',
+        'id',
     ];
 
     /**
@@ -35,11 +35,7 @@ class CreateQuoteRequest extends Request
     public function rules(): array
     {
         return [
-            'received_from' => 'required',
-            'paymentOf' => 'required',
-            'type' => 'required',
-            'sumOf' => 'required',
-            'amount' => 'required'
+            'id' => 'required'
         ];
     }
 

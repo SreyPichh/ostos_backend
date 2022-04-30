@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Containers\AppSection\Quote\UI\API\Requests;
+namespace App\Containers\AppSection\Receipt\UI\API\Requests;
 
 use App\Ship\Parents\Requests\Request;
 
-class CreateQuoteRequest extends Request
+class GetAllReceiptsRequest extends Request
 {
     /**
      * Define which Roles and/or Permissions has access to this request.
@@ -35,11 +35,7 @@ class CreateQuoteRequest extends Request
     public function rules(): array
     {
         return [
-            'received_from' => 'required',
-            'paymentOf' => 'required',
-            'type' => 'required',
-            'sumOf' => 'required',
-            'amount' => 'required'
+            // 'id' => 'required'
         ];
     }
 
