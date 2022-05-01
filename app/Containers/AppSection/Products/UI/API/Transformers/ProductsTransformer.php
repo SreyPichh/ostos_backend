@@ -29,6 +29,7 @@ class ProductsTransformer extends Transformer
             'name' => $products->name,
             'business_id' => $products->business_id,
             'isActive' => $products->isActive,
+            'isFavorite' => $products->isFavorite,
             'price' => $products->price,
             'description' => $products->description,
             'created_at' => $products->created_at,

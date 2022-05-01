@@ -12,7 +12,7 @@ class Products extends Model
         'name',
         'business_id',
         'isActive',
-//        'isFavorite',
+        'isFavorite',
         'price',
         'description'
     ];
