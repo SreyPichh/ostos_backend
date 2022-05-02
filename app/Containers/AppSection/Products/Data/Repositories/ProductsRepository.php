@@ -10,7 +10,7 @@ class ProductsRepository extends Repository
      * @var array
      */
     protected $fieldSearchable = [
-        'id' => '=',
+        'id',
         // ...
     ];
 }

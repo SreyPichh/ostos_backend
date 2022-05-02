@@ -13,6 +13,7 @@ class CreateProductsTask extends Task
 
     public function __construct(ProductsRepository $repository)
     {
+//        dd($repository);
         $this->repository = $repository;
     }
 

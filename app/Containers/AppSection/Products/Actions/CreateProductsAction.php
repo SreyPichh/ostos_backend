@@ -17,6 +17,7 @@ class CreateProductsAction extends Action
             'name' => $request->name,
             'business_id' => $request->business_id,
             'isActive' => $request->isActive,
+            'isFavorite' => $request->isFavorite,
             'price' => $request->price,
             'description' => $request->description,
         ]);
