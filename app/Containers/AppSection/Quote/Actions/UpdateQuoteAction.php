@@ -13,6 +13,10 @@ class UpdateQuoteAction extends Action
     {
         $data = $request->sanitizeInput([
             // add your request data here
+            'date',
+            'quote_to',
+            'product_data',
+            'total'
         ]);
 
         return app(UpdateQuoteTask::class)->run($request->id, $data);
