@@ -13,9 +13,10 @@ class UpdateProductsAction extends Action
     {
         $data = $request->sanitizeInput([
             // add your request data here
-            'employee_id',
             'name',
             'business_id',
+            'isActive',
+            'isFavorite',
             'price',
             'description'
         ]);
