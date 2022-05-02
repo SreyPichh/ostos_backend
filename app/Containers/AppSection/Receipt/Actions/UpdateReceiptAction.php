@@ -13,6 +13,12 @@ class UpdateReceiptAction extends Action
     {
         $data = $request->sanitizeInput([
             // add your request data here
+            'date',
+            'received_from',
+            'sumOf',
+            'paymentOf',
+            'amount',
+            'type'
         ]);
 
         return app(UpdateReceiptTask::class)->run($request->id, $data);
