@@ -10,6 +10,6 @@ class GetAllInvoicesAction extends Action
 {
     public function run(Request $request)
     {
-        return app(GetAllInvoicesTask::class)->addRequestCriteria()->run($request );
+        return app(GetAllInvoicesTask::class)->addRequestCriteria()->run($request);
     }
 }
