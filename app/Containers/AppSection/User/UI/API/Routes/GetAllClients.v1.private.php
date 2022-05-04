@@ -19,6 +19,6 @@
 use App\Containers\AppSection\User\UI\API\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
-Route::get('clients', [Controller::class, 'getAllClients'])
+Route::get('employees', [Controller::class, 'getAllClients'])
     ->name('api_user_get_all_clients')
     ->middleware(['auth:api']);
