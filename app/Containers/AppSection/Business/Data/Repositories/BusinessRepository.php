@@ -11,6 +11,10 @@ class BusinessRepository extends Repository
      */
     protected $fieldSearchable = [
         'id' => '=',
-        // ...
+        'name',
+        'phone_number1',
+        'phone_number2',
+        'email',
+        'aba_name'
     ];
 }
