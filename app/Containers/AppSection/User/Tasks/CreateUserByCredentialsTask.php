@@ -28,6 +28,8 @@ class CreateUserByCredentialsTask extends Task
         string $gender = null,
         string $first_address = null,
         string $second_address = null,
+        string $phone_number = null,
+        string $national_id = null,
         string $birth = null
     ): User
     {
@@ -44,6 +46,8 @@ class CreateUserByCredentialsTask extends Task
                     'gender' => $gender,
                     'first_address' => $first_address,
                     'second_address' => $second_address,
+                    'phone_number' => $phone_number,
+                    'national_id' => $national_id,
                     'birth' => $birth,
                     'is_admin' => $isAdmin,
                 ]);

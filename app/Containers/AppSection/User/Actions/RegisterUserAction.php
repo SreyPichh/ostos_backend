@@ -27,6 +27,8 @@ class RegisterUserAction extends Action
             $request->gender,
             $request->first_address,
             $request->second_address,
+            $request->phone_number,
+            $request->national_id,
             $request->birth
         );
 

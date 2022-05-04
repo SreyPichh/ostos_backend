@@ -30,6 +30,8 @@ class UserTransformer extends Transformer
             'gender' => $user->gender,
             'first_address' => $user->first_address,
             'second_address' => $user->second_address,
+            'phone_number' => $user->phone_number,
+            'national_id' => $user->national_id,
             'birth' => $user->birth,
             'created_at' => $user->created_at,
             'updated_at' => $user->updated_at,

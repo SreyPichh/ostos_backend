@@ -27,6 +27,8 @@ class User extends UserModel
         'gender',
         'first_address',
         'second_address',
+        'phone_number',
+        'national_id',
         'birth',
         'social_provider',
         'social_token',
