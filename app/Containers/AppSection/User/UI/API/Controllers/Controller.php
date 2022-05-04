@@ -50,6 +50,9 @@ class Controller extends ApiController
     public function updateUser(UpdateUserRequest $request): array
     {
         $user = app(UpdateUserAction::class)->run($request);
+        $type_action = 'Update';
+        $action_label = 'Employee';
+        app(CreateRecentActionAction::class)->run($user->id, $type_action, $action_label);
         return $this->transform($user, UserTransformer::class);
     }
 
