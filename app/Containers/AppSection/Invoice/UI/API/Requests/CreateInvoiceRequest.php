@@ -39,7 +39,7 @@ class CreateInvoiceRequest extends Request
             'invoice_number' => 'required',
             'date' => 'required',
             'due_amount' => 'required',
-            'employee_data' => 'required',
+//            'employee_data' => 'required',
             'business_id' => 'required',
             'product_data' => 'required',
             'customer_name' => 'required',
