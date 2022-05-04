@@ -23,12 +23,10 @@ class Controller extends ApiController
 {
     public function createInvoice(CreateInvoiceRequest $request)
     {
-//        return $request->invoice_number;
-//        return $request;
         $invoice = app(CreateInvoiceAction::class)->run($request);
-//        $type_action = 'Post';
-//        $action_label = 'Invoice';
-//        app(CreateRecentActionAction::class)->run($invoice->id, $type_action, $action_label);
+        $type_action = 'Post';
+        $action_label = 'Invoice';
+        app(CreateRecentActionAction::class)->run($invoice->id, $type_action, $action_label);
         return $this->created($this->transform($invoice, InvoiceTransformer::class));
     }
 
