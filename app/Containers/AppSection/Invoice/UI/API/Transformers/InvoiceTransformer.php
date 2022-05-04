@@ -35,6 +35,7 @@ class InvoiceTransformer extends Transformer
             'customer_name' => $invoice->customer_name,
             'customer_email' => $invoice->customer_email,
             'customer_phone_number' => $invoice->customer_phone_number,
+            'customer_phone_number2' => $invoice->customer_phone_number2,
             'customer_address1' => $invoice->customer_address1,
             'customer_address2' => $invoice->customer_address2,
             'status' => $invoice->status,

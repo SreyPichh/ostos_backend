@@ -16,6 +16,7 @@ class Invoice extends Model
         'customer_name',
         'customer_email',
         'customer_phone_number',
+        'customer_phone_number_2',
         'customer_address1',
         'customer_address2',
         'status',

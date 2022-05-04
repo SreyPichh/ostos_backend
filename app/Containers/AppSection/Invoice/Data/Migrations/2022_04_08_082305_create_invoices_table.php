@@ -21,6 +21,7 @@ class CreateInvoicesTable extends Migration
             $table->string('customer_name')->nullable();
             $table->string('customer_email')->nullable();
             $table->string('customer_phone_number')->nullable();
+            $table->string('customer_phone_number_2')->nullable();
             $table->string('customer_address1')->nullable();
             $table->string('customer_address2')->nullable();
             $table->enum('status', ['paid', 'unpaid', 'partial_billed'])->nullable();
