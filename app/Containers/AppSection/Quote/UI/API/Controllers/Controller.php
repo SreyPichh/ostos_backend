@@ -13,6 +13,7 @@ use App\Containers\AppSection\Quote\Actions\FindQuoteByIdAction;
 use App\Containers\AppSection\Quote\Actions\GetAllQuotesAction;
 use App\Containers\AppSection\Quote\Actions\UpdateQuoteAction;
 use App\Containers\AppSection\Quote\Actions\DeleteQuoteAction;
+use App\Containers\AppSection\RecentAction\Actions\CreateRecentActionAction;
 use App\Ship\Parents\Controllers\ApiController;
 use Illuminate\Http\JsonResponse;
 
@@ -21,6 +22,9 @@ class Controller extends ApiController
     public function createQuote(CreateQuoteRequest $request): JsonResponse
     {
         $quote = app(CreateQuoteAction::class)->run($request);
+        $type_action = 'Post';
+        $action_label = 'Quote';
+        app(CreateRecentActionAction::class)->run($quote->id, $type_action, $action_label);
         return $this->created($this->transform($quote, QuoteTransformer::class));
     }
 
@@ -39,6 +43,9 @@ class Controller extends ApiController
     public function updateQuote(UpdateQuoteRequest $request): array
     {
         $quote = app(UpdateQuoteAction::class)->run($request);
+        $type_action = 'Update';
+        $action_label = 'Quote';
+        app(CreateRecentActionAction::class)->run($quote->id, $type_action, $action_label);
         return $this->transform($quote, QuoteTransformer::class);
     }
 
