@@ -11,31 +11,6 @@ class UpdateInvoiceAction extends Action
 {
     public function run(Request $request): Invoice
     {
-//        $data = $request->sanitizeInput([
-//            // add your request data here
-////            'invoice_number',
-////            'employee_id',
-////            'business_id',
-////            'product_id',
-////            'price',
-////            'status',
-////            'Total',
-//
-//            'invoice_number',
-//            'type',
-//            'date',
-//            'due_amount',
-//            'employee_data',
-//            'business_id',
-//            'product_data',
-//            'customer_name',
-//            'customer_email',
-//            'customer_phone_number',
-//            'customer_address1',
-//            'customer_address2',
-//            'status',
-//            'total'
-//        ]);
         $data = [
             'invoice_number' => $request->invoice_number,
             'type'=> $request->type,
@@ -47,6 +22,7 @@ class UpdateInvoiceAction extends Action
             'customer_name' => $request->customer_name,
             'customer_email' => $request->customer_email,
             'customer_phone_number' => $request->customer_phone_number,
+            'customer_phone_number_2' => $request->customer_phone_number_2,
             'customer_address1' => $request->customer_address1,
             'customer_address2' => $request->customer_address2,
             'status' => $request->status,
