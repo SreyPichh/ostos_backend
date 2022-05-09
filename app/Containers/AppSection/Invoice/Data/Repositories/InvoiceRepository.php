@@ -11,8 +11,10 @@ class InvoiceRepository extends Repository
      */
     protected $fieldSearchable = [
         'id' => '=',
-        'customer_phone_number',
-        'invoice_number',
-        'customer_name'
+        'business_id',
+        'customer_phone_number' => 'like',
+        'invoice_number' => 'like',
+        'customer_name' => 'like',
+        'status'
     ];
 }
