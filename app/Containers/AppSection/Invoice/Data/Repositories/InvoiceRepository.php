@@ -15,6 +15,6 @@ class InvoiceRepository extends Repository
         'customer_phone_number' => 'like',
         'invoice_number' => 'like',
         'customer_name' => 'like',
-        'status'
+        'status' => 'like'
     ];
 }
