@@ -11,6 +11,7 @@ class ProductsRepository extends Repository
      */
     protected $fieldSearchable = [
         'id',
-        'name'
+        'name',
+        'business_id',
     ];
 }
