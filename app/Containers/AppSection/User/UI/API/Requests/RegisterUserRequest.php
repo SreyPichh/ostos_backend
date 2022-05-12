@@ -35,7 +35,6 @@ class RegisterUserRequest extends Request
             'email' => 'required|email|max:40|unique:users,email',
             'password' => 'required|min:6|max:30',
             'name' => 'required|min:2|max:50',
-            'phone_number' => 'required|min:9|max:12'
         ];
     }
 
