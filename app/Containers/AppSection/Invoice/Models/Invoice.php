@@ -19,6 +19,8 @@ class Invoice extends Model
         'customer_phone_number_2',
         'customer_address1',
         'customer_address2',
+        'invoice_note',
+        'signature',
         'status',
         'total'
     ];

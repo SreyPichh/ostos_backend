@@ -38,6 +38,8 @@ class InvoiceTransformer extends Transformer
             'customer_phone_number2' => $invoice->customer_phone_number2,
             'customer_address1' => $invoice->customer_address1,
             'customer_address2' => $invoice->customer_address2,
+            'invoice_note' => $invoice->invoice_note,
+            'signature' => $invoice->signature,
             'status' => $invoice->status,
             'total' => $invoice->total,
             'created_at' => $invoice->created_at,
