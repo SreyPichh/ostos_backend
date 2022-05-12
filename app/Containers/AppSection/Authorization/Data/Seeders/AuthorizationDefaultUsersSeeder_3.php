@@ -11,7 +11,7 @@ class AuthorizationDefaultUsersSeeder_3 extends Seeder
     public function run(): void
     {
         // Default Users (with their roles) ---------------------------------------------
-        $admin = app(CreateUserByCredentialsTask::class)->run(true, 'sereypichphan@gmail.com', 'admin', 'Ostos Admin');
+        $admin = app(CreateUserByCredentialsTask::class)->run(true, 'admin@gmail.com', 'admin', 'Admin');
         $admin->assignRole(app(FindRoleTask::class)->run('admin'));
         $admin->email_verified_at = now();
         $admin->save();
