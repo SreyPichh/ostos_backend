@@ -27,7 +27,7 @@ class CreateInvoicesTable extends Migration
             $table->longText('sample_img')->nullable();
             $table->string('invoice_note')->nullable();
             $table->boolean('signature')->nullable();
-            $table->enum('status', ['paid', 'unpaid', 'partial_billed'])->nullable();
+            $table->enum('status', ['Paid', 'Unpaid', 'Partial Billed'])->nullable();
             $table->double('total')->nullable();
             $table->timestamps();
             $table->softDeletes();
