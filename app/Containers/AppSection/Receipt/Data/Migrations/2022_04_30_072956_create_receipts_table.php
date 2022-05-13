@@ -17,7 +17,7 @@ class CreateReceiptsTable extends Migration
             $table->string('sumOf')->nullable();
             $table->string('paymentOf')->nullable();
             $table->double('amount')->nullable();
-            $table->enum('type', ['cash', 'cheque'])->nullable();
+            $table->enum('type', ['Cash', 'Cheque'])->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
