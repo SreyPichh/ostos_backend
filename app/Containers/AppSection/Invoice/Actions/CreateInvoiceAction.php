@@ -26,6 +26,7 @@ class CreateInvoiceAction extends Action
             'customer_phone_number_2' => $request->customer_phone_number_2,
             'customer_address1' => $request->customer_address1,
             'customer_address2' => $request->customer_address2,
+            'sample_img' => $request->sample_img,
             'invoice_note' => $request->invoice_note,
             'signature' => $request->signature,
             'status' => $request->status,
