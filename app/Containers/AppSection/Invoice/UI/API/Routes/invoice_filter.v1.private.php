@@ -22,7 +22,7 @@
 use App\Containers\AppSection\Invoice\UI\API\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
-Route::get('', [Controller::class, 'GetAllFilterInvoices'])
+Route::get('', [Controller::class, 'getAllFilterInvoices'])
     ->name('api_invoice_get_all_filter_invoices')
     ->middleware(['auth:api']);
 
