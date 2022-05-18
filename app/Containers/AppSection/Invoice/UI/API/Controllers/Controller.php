@@ -2,6 +2,7 @@
 
 namespace App\Containers\AppSection\Invoice\UI\API\Controllers;
 
+use App\Containers\AppSection\Invoice\Actions\GetAllFilterInvoicesAction;
 use App\Containers\AppSection\Invoice\UI\API\Requests\CreateInvoiceRequest;
 use App\Containers\AppSection\Invoice\UI\API\Requests\DeleteInvoiceRequest;
 use App\Containers\AppSection\Invoice\UI\API\Requests\GetAllFilterInvoices;
