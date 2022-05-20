@@ -5,7 +5,7 @@ namespace App\Containers\AppSection\Invoice\UI\API\Controllers;
 use App\Containers\AppSection\Invoice\Actions\GetAllFilterInvoicesAction;
 use App\Containers\AppSection\Invoice\UI\API\Requests\CreateInvoiceRequest;
 use App\Containers\AppSection\Invoice\UI\API\Requests\DeleteInvoiceRequest;
-use App\Containers\AppSection\Invoice\UI\API\Requests\GetAllFilterInvoices;
+use App\Containers\AppSection\Invoice\UI\API\Requests\GetAllFilterInvoicesRequest;
 use App\Containers\AppSection\Invoice\UI\API\Requests\GetAllInvoicesRequest;
 use App\Containers\AppSection\Invoice\UI\API\Requests\FindInvoiceByIdRequest;
 use App\Containers\AppSection\Invoice\UI\API\Requests\GetLastIdRequest;
@@ -50,7 +50,7 @@ class Controller extends ApiController
         return $this->transform($invoice, InvoiceTransformer::class);
     }
 
-    public function getAllFilterInvoices(GetAllFilterInvoices $request): array
+    public function getAllFilterInvoices(GetAllFilterInvoicesRequest $request): array
     {
         $invoice = app(GetAllFilterInvoicesAction::class)->run($request);
         return $this->transform($invoice, InvoiceTransformer::class);

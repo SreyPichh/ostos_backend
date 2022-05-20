@@ -4,7 +4,7 @@ namespace App\Containers\AppSection\Invoice\UI\API\Requests;
 
 use App\Ship\Parents\Requests\Request;
 
-class GetAllFilterInvoices extends Request
+class GetAllFilterInvoicesRequest extends Request
 {
     /**
      * Define which Roles and/or Permissions has access to this request.
