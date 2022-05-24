@@ -36,7 +36,6 @@ class CreateProductsRequest extends Request
     {
         return [
             // 'id' => 'required'
-
             'name' => 'required',
             'business_id' => 'required',
             'isActive' => 'required',
