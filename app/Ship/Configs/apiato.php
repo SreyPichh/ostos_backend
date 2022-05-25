@@ -81,7 +81,7 @@ return [
         */
         'throttle' => [
             'enabled' => env('API_RATE_LIMIT_ENABLED', true),
-            'attempts' => env('API_RATE_LIMIT_ATTEMPTS', '30'),
+            'attempts' => env('API_RATE_LIMIT_ATTEMPTS', '60'),
             'expires' => env('API_RATE_LIMIT_EXPIRES', '1'),
         ]
 
@@ -101,7 +101,7 @@ return [
         | Default: []
         |
         */
-        'allow-roles-to-access-all-routes' => [],
+        'allow-roles-to-access-all-routes' => ['*'],
 
         /*
         |--------------------------------------------------------------------------
