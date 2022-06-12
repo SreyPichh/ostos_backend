@@ -26,6 +26,7 @@ class NotedBookTransformer extends Transformer
         $response = [
             'object' => $notedbook->getResourceKey(),
             'id' => $notedbook->getHashedKey(),
+            'title' => $notedbook->title,
             'description' => $notedbook->description,
             'created_at' => $notedbook->created_at,
             'updated_at' => $notedbook->updated_at,

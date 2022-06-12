@@ -13,6 +13,7 @@ class CreateNotedBookAction extends Action
     {
         $data = $request->sanitizeInput([
             // add your request data here
+            'title' => $request->title,
             'description' => $request->description
         ]);
 

@@ -7,7 +7,8 @@ use App\Ship\Parents\Models\Model;
 class NotedBook extends Model
 {
     protected $fillable = [
-        'description'
+        'description',
+        'title'
     ];
 
     protected $attributes = [

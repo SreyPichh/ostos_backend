@@ -12,6 +12,7 @@ class CreateNotedBooksTable extends Migration
     {
         Schema::create('noted_books', function (Blueprint $table) {
             $table->increments('id');
+            $table->longText('title')->nullable();
             $table->longText('description')->nullable();
             $table->timestamps();
             $table->softDeletes();
