@@ -36,7 +36,6 @@ class CreatePurchaseRequest extends Request
     {
         return [
             // 'id' => 'required'
-            'supplier' => 'required'
         ];
     }
 

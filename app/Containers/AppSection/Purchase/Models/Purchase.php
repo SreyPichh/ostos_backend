@@ -7,11 +7,7 @@ use App\Ship\Parents\Models\Model;
 class Purchase extends Model
 {
     protected $fillable = [
-        'supplier',
-        'description',
-        'total_unit',
-        'status',
-        'total'
+
     ];
 
     protected $attributes = [

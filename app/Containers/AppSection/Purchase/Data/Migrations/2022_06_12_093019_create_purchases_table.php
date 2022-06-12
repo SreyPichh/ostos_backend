@@ -11,12 +11,8 @@ class CreatePurchasesTable extends Migration
     public function up(): void
     {
         Schema::create('purchases', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('supplier')->nullable();
-            $table->longText('description')->nullable();
-            $table->double('total_unit')->nullable();
-            $table->enum('status', ['Paid', 'Unpaid', 'Partial Bill'])->nullable();
-            $table->double('total')->nullable();
+            $table->id();
+
             $table->timestamps();
             //$table->softDeletes();
         });

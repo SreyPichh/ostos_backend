@@ -13,11 +13,6 @@ class UpdatePurchaseAction extends Action
     {
         $data = $request->sanitizeInput([
             // add your request data here
-            'supplier',
-            'description',
-            'total_unit',
-            'status',
-            'total'
         ]);
 
         return app(UpdatePurchaseTask::class)->run($request->id, $data);
