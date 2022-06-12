@@ -19,6 +19,7 @@ class CreatePurchasesTable extends Migration
             $table->string('phone_number')->nullable();
             $table->longText('address')->nullable();
             $table->longText('supplier_product_data')->nullable();
+            $table->longText('note')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

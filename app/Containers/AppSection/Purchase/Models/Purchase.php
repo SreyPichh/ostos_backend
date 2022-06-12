@@ -13,7 +13,8 @@ class Purchase extends Model
         'status',
         'phone_number',
         'address',
-        'supplier_product_data'
+        'supplier_product_data',
+        'note'
     ];
 
     protected $attributes = [

@@ -33,6 +33,7 @@ class PurchaseTransformer extends Transformer
             'address' => $purchase->address,
             'supplier_product_data' => json_decode($purchase->supplier_product_data),
             'status' => $purchase->status,
+            'note' => $purchase->note,
             'created_at' => $purchase->created_at,
             'updated_at' => $purchase->updated_at,
             'readable_created_at' => $purchase->created_at->diffForHumans(),

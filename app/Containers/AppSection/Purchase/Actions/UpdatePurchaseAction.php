@@ -19,7 +19,8 @@ class UpdatePurchaseAction extends Action
             'phone_number' => $request->phone_number,
             'address' => $request->address,
             'supplier_product_data' => json_encode($request->supplier_product_data),
-            'status' => $request->status
+            'status' => $request->status,
+            'note'
         ];
 
         return app(UpdatePurchaseTask::class)->run($request->id, $data);
