@@ -22,7 +22,7 @@ class GetAllInvoicesTask extends Task
         $status = $request->status;
         if(empty($business_id) and empty($status))
         {
-            return $this->repository->paginate();
+            return $this->repository->orderBy('updated_at', 'desc')->paginate();
         }
         $query = Invoice::query();
         if(!empty($business_id))
@@ -33,6 +33,6 @@ class GetAllInvoicesTask extends Task
         {
             $query = $query->where('status', $status);
         }
-        return $query->get();
+        return $query->orderBy('updated_at', 'desc');
     }
 }
