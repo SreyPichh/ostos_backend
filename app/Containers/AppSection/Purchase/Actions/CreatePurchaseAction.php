@@ -11,9 +11,16 @@ class CreatePurchaseAction extends Action
 {
     public function run(Request $request): Purchase
     {
-        $data = $request->sanitizeInput([
+        $data = [
             // add your request data here
-        ]);
+            'supplier' => $request->supplier,
+            'supplier_invoice_number' => $request->supplier_invoice_number,
+            'date' => $request->date,
+            'phone_number' => $request->phone_number,
+            'address' => $request->address,
+            'supplier_product_data' => json_encode($request->supplier_product_data),
+            'status' => $request->status
+        ];
 
         return app(CreatePurchaseTask::class)->run($data);
     }

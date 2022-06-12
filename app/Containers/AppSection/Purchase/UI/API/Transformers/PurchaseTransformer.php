@@ -10,14 +10,14 @@ class PurchaseTransformer extends Transformer
     /**
      * @var  array
      */
-    protected $defaultIncludes = [
+    protected array $defaultIncludes = [
 
     ];
 
     /**
      * @var  array
      */
-    protected $availableIncludes = [
+    protected array $availableIncludes = [
 
     ];
 
@@ -26,6 +26,13 @@ class PurchaseTransformer extends Transformer
         $response = [
             'object' => $purchase->getResourceKey(),
             'id' => $purchase->getHashedKey(),
+            'supplier' => $purchase->supplier,
+            'supplier_invoice_number' => $purchase->supplier_invoice_number,
+            'date' => $purchase->date,
+            'phone_number' => $purchase->phone_number,
+            'address' => $purchase->address,
+            'supplier_product_data' => json_decode($purchase->supplier_product_data),
+            'status' => $purchase->status,
             'created_at' => $purchase->created_at,
             'updated_at' => $purchase->updated_at,
             'readable_created_at' => $purchase->created_at->diffForHumans(),
