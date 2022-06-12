@@ -14,7 +14,9 @@ class Purchase extends Model
         'phone_number',
         'address',
         'supplier_product_data',
-        'note'
+        'note',
+        'due_amount',
+        'total'
     ];
 
     protected $attributes = [

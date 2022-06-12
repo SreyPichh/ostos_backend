@@ -20,7 +20,9 @@ class CreatePurchaseAction extends Action
             'address' => $request->address,
             'supplier_product_data' => json_encode($request->supplier_product_data),
             'status' => $request->status,
-            'note'
+            'note' => $request->note,
+            'due_amount' => $request->due_amount,
+            'total' => $request->total
         ];
 
         return app(CreatePurchaseTask::class)->run($data);

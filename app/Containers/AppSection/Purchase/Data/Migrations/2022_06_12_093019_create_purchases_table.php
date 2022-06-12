@@ -20,6 +20,8 @@ class CreatePurchasesTable extends Migration
             $table->longText('address')->nullable();
             $table->longText('supplier_product_data')->nullable();
             $table->longText('note')->nullable();
+            $table->double('due_amount')->nullable();
+            $table->double('total')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
