@@ -2,10 +2,12 @@
 
 namespace App\Containers\AppSection\Purchase\UI\API\Controllers;
 
+use App\Containers\AppSection\Purchase\Actions\GetLastIdPurchasesAction;
 use App\Containers\AppSection\Purchase\UI\API\Requests\CreatePurchaseRequest;
 use App\Containers\AppSection\Purchase\UI\API\Requests\DeletePurchaseRequest;
 use App\Containers\AppSection\Purchase\UI\API\Requests\GetAllPurchasesRequest;
 use App\Containers\AppSection\Purchase\UI\API\Requests\FindPurchaseByIdRequest;
+use App\Containers\AppSection\Purchase\UI\API\Requests\GetLastIdPurchasesRequest;
 use App\Containers\AppSection\Purchase\UI\API\Requests\UpdatePurchaseRequest;
 use App\Containers\AppSection\Purchase\UI\API\Transformers\PurchaseTransformer;
 use App\Containers\AppSection\Purchase\Actions\CreatePurchaseAction;
@@ -33,6 +35,12 @@ class Controller extends ApiController
     public function getAllPurchases(GetAllPurchasesRequest $request): array
     {
         $purchases = app(GetAllPurchasesAction::class)->run($request);
+        return $this->transform($purchases, PurchaseTransformer::class);
+    }
+
+    public function getLastIdPurchase(GetLastIdPurchasesRequest $request): array
+    {
+        $purchases = app(GetLastIdPurchasesAction::class)->run($request);
         return $this->transform($purchases, PurchaseTransformer::class);
     }
 
