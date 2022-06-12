@@ -7,7 +7,13 @@ use App\Ship\Parents\Models\Model;
 class Purchase extends Model
 {
     protected $fillable = [
-
+        'supplier',
+        'supplier_invoice_number',
+        'date',
+        'status',
+        'phone_number',
+        'address',
+        'supplier_product_data'
     ];
 
     protected $attributes = [
