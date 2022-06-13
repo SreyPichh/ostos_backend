@@ -11,6 +11,8 @@ class PurchaseRepository extends Repository
      */
     protected $fieldSearchable = [
         'id' => '=',
-        // ...
+        'supplier' => 'like',
+        'phone_number',
+        'status'
     ];
 }
