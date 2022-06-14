@@ -10,14 +10,14 @@ class CustomerTransformer extends Transformer
     /**
      * @var  array
      */
-    protected $defaultIncludes = [
+    protected array $defaultIncludes = [
 
     ];
 
     /**
      * @var  array
      */
-    protected $availableIncludes = [
+    protected array $availableIncludes = [
 
     ];
 
@@ -26,6 +26,12 @@ class CustomerTransformer extends Transformer
         $response = [
             'object' => $customer->getResourceKey(),
             'id' => $customer->getHashedKey(),
+            'customer_name' => $customer->customer_name,
+            'customer_email' => $customer->customer_email,
+            'customer_phone_number' => $customer->customer_phone_number,
+            'customer_phone_number_2' => $customer->customer_phone_number_2,
+            'customer_address1' => $customer->customer_address1,
+            'customer_address2' => $customer->customer_address2,
             'created_at' => $customer->created_at,
             'updated_at' => $customer->updated_at,
             'readable_created_at' => $customer->created_at->diffForHumans(),
