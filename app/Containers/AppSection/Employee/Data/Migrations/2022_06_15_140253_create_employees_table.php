@@ -13,7 +13,7 @@ class CreateEmployeesTable extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->nullable();
-            $table->enum('gender', ['Make', 'Female', 'Other'])->nullable();
+            $table->enum('gender', ['Male', 'Female', 'Other'])->nullable();
             $table->string('first_address')->nullable();
             $table->string('second_address')->nullable();
             $table->string('phone_number')->nullable();
