@@ -13,6 +13,14 @@ class UpdateEmployeeAction extends Action
     {
         $data = $request->sanitizeInput([
             // add your request data here
+            'name' => $request->name,
+            'gender' => $request->gender,
+            'first_address' => $request->first_address,
+            'second_address' => $request->second_address,
+            'phone_number' => $request->phone_number,
+            'national_id' => $request->national_id,
+            'profile_img' => $request->profile_img,
+            'birth' => $request->birth,
         ]);
 
         return app(UpdateEmployeeTask::class)->run($request->id, $data);
