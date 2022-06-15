@@ -20,17 +20,17 @@ class CreateUserByCredentialsTask extends Task
 
     public function run(
         bool $isAdmin,
-        string $email,
-        string $password,
+        string $email = null,
+        string $password = null,
         string $name = null,
         string $f_name = null,
         string $l_name = null,
         string $gender = null,
-        string $first_address = null,
-        string $second_address = null,
-        string $phone_number = null,
-        string $national_id = null,
-        string $birth = null
+        string $first_address,
+        string $second_address,
+        string $phone_number,
+        string $national_id,
+        string $birth
     ): User
     {
         try {
