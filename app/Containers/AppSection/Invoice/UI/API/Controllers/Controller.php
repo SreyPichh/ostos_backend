@@ -67,7 +67,9 @@ class Controller extends ApiController
 
     public function deleteInvoice(DeleteInvoiceRequest $request): JsonResponse
     {
-        app(DeleteInvoiceAction::class)->run($request);
+        $type_action = 'Delete';
+        $action_label = 'Invoice';
+        app(DeleteInvoiceAction::class)->run($request, $type_action, $action_label);
         return $this->noContent();
     }
 }

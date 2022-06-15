@@ -12,7 +12,7 @@ class PurchaseRepository extends Repository
     protected $fieldSearchable = [
         'id' => '=',
         'supplier' => 'like',
-        'phone_number',
+        'phone_number' => 'like',
         'status',
         'total',
         'date'
