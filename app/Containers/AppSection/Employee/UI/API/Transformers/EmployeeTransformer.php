@@ -10,14 +10,14 @@ class EmployeeTransformer extends Transformer
     /**
      * @var  array
      */
-    protected $defaultIncludes = [
+    protected array $defaultIncludes = [
 
     ];
 
     /**
      * @var  array
      */
-    protected $availableIncludes = [
+    protected array $availableIncludes = [
 
     ];
 
@@ -26,11 +26,17 @@ class EmployeeTransformer extends Transformer
         $response = [
             'object' => $employee->getResourceKey(),
             'id' => $employee->getHashedKey(),
+            'name' => $employee->name,
+            'gender'=> $employee->gender,
+            'first_address' => $employee->first_address,
+            'second_address' => $employee->second_address,
+            'phone_number' => $employee->phone_number,
+            'national_id' => $employee->national_id,
+            'profile_img' => $employee->profile_img,
             'created_at' => $employee->created_at,
             'updated_at' => $employee->updated_at,
             'readable_created_at' => $employee->created_at->diffForHumans(),
             'readable_updated_at' => $employee->updated_at->diffForHumans(),
-
         ];
 
         return $response = $this->ifAdmin([
