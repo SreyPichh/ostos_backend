@@ -60,7 +60,10 @@ class Controller extends ApiController
 
     public function deleteProducts(DeleteProductsRequest $request): JsonResponse
     {
-        app(DeleteProductsAction::class)->run($request);
+        $product = app(DeleteProductsAction::class)->run($request);
+        $type_action = 'Delete';
+        $action_label = 'Product';
+        app(CreateRecentActionAction::class)->run($product, $type_action, $action_label);
         return $this->noContent();
     }
 }
