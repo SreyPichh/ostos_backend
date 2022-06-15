@@ -14,6 +14,7 @@ class PurchaseRepository extends Repository
         'supplier' => 'like',
         'phone_number',
         'status',
-        'total'
+        'total',
+        'date'
     ];
 }
