@@ -25,7 +25,7 @@ class Controller extends ApiController
     public function createProducts(CreateProductsRequest $request): JsonResponse
     {
         $products = app(CreateProductsAction::class)->run($request);
-        $type_action = 'Post';
+        $type_action = 'Create';
         $action_label = 'Product';
         app(CreateRecentActionAction::class)->run($products->id, $type_action, $action_label);
         return $this->created($this->transform($products, ProductsTransformer::class));

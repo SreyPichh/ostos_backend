@@ -25,7 +25,7 @@ class Controller extends ApiController
     public function createBusiness(CreateBusinessRequest $request): JsonResponse
     {
         $business = app(CreateBusinessAction::class)->run($request);
-        $type_action = 'Post';
+        $type_action = 'Create';
         $action_label = 'Business';
         app(CreateRecentActionAction::class)->run($business->id,$type_action,$action_label);
         return $this->created($this->transform($business, BusinessTransformer::class));

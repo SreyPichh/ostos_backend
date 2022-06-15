@@ -13,6 +13,7 @@ use App\Containers\AppSection\Employee\Actions\FindEmployeeByIdAction;
 use App\Containers\AppSection\Employee\Actions\GetAllEmployeesAction;
 use App\Containers\AppSection\Employee\Actions\UpdateEmployeeAction;
 use App\Containers\AppSection\Employee\Actions\DeleteEmployeeAction;
+use App\Containers\AppSection\RecentAction\Actions\CreateRecentActionAction;
 use App\Ship\Parents\Controllers\ApiController;
 use Illuminate\Http\JsonResponse;
 
@@ -21,6 +22,9 @@ class Controller extends ApiController
     public function createEmployee(CreateEmployeeRequest $request): JsonResponse
     {
         $employee = app(CreateEmployeeAction::class)->run($request);
+        $type_action = 'Create';
+        $action_label = 'Employee';
+        app(CreateRecentActionAction::class)->run($employee->id, $type_action, $action_label);
         return $this->created($this->transform($employee, EmployeeTransformer::class));
     }
 
@@ -39,12 +43,18 @@ class Controller extends ApiController
     public function updateEmployee(UpdateEmployeeRequest $request): array
     {
         $employee = app(UpdateEmployeeAction::class)->run($request);
+        $type_action = 'Update';
+        $action_label = 'Employee';
+        app(CreateRecentActionAction::class)->run($employee->id, $type_action, $action_label);
         return $this->transform($employee, EmployeeTransformer::class);
     }
 
     public function deleteEmployee(DeleteEmployeeRequest $request): JsonResponse
     {
-        app(DeleteEmployeeAction::class)->run($request);
+        $employee = app(DeleteEmployeeAction::class)->run($request);
+        $type_action = 'Delete';
+        $action_label = 'Employee';
+        app(CreateRecentActionAction::class)->run($employee, $type_action, $action_label);
         return $this->noContent();
     }
 }
