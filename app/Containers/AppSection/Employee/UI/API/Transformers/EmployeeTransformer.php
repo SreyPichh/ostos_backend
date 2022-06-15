@@ -33,6 +33,7 @@ class EmployeeTransformer extends Transformer
             'phone_number' => $employee->phone_number,
             'national_id' => $employee->national_id,
             'profile_img' => $employee->profile_img,
+            'birth' => $employee->birth,
             'created_at' => $employee->created_at,
             'updated_at' => $employee->updated_at,
             'readable_created_at' => $employee->created_at->diffForHumans(),

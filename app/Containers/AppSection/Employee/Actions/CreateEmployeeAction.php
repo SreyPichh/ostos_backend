@@ -20,7 +20,7 @@ class CreateEmployeeAction extends Action
             'phone_number' => $request->phone_number,
             'national_id' => $request->national_id,
             'profile_img' => $request->profile_img,
-            'birth'
+            'birth' => $request->birth,
         ]);
 
         return app(CreateEmployeeTask::class)->run($data);
