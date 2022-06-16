@@ -16,6 +16,6 @@ class GetAllProductsTask extends Task
 
     public function run()
     {
-        return $this->repository->orderBy('updated_at', 'desc')->paginate();
+        return $this->repository->orderBy('isFavorite', 'desc')->orderBy('updated_at', 'desc')->paginate();
     }
 }
