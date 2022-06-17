@@ -81,7 +81,7 @@ return [
         */
         'throttle' => [
             'enabled' => env('API_RATE_LIMIT_ENABLED', true),
-            'attempts' => env('API_RATE_LIMIT_ATTEMPTS', '60'),
+            'attempts' => env('API_RATE_LIMIT_ATTEMPTS', '240'),
             'expires' => env('API_RATE_LIMIT_EXPIRES', '1'),
         ]
 
