@@ -7,7 +7,15 @@ use App\Ship\Parents\Models\Model;
 class Quote extends Model
 {
     protected $fillable = [
-
+        'quote_number',
+        'date',
+        'due_amount',
+        'business_id',
+        'product_data',
+        'sample_img',
+        'signature',
+        'status',
+        'total'
     ];
 
     protected $attributes = [
