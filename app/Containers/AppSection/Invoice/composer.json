@@ -1,0 +1,6 @@
+{
+  "name": "apiato/invoice",
+  "description": "Invoice Container for apiato.",
+  "require": {
+  }
+}
