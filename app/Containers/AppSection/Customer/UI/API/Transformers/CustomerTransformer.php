@@ -27,6 +27,8 @@ class CustomerTransformer extends Transformer
             'object' => $customer->getResourceKey(),
             'id' => $customer->getHashedKey(),
             'customer_name' => $customer->customer_name,
+            'customer_company' => $customer->customer_company,
+            'po' => $customer->po,
             'customer_email' => $customer->customer_email,
             'customer_phone_number' => $customer->customer_phone_number,
             'customer_phone_number_2' => $customer->customer_phone_number_2,
@@ -36,7 +38,6 @@ class CustomerTransformer extends Transformer
             'updated_at' => $customer->updated_at,
             'readable_created_at' => $customer->created_at->diffForHumans(),
             'readable_updated_at' => $customer->updated_at->diffForHumans(),
-
         ];
 
         return $response = $this->ifAdmin([

@@ -17,6 +17,7 @@ class CreateQuoteAction extends Action
             'due_amount' => $request->due_amount,
             'business_id' => $request->business_id,
             'product_data' => json_encode($request->product_data),
+            'po' => json_encode($request->po),
             'sample_img' => $request->sample_img,
             'signature' => $request->signature,
             'status' => $request->status,

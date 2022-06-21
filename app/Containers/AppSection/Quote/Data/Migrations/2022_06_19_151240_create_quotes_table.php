@@ -17,6 +17,7 @@ class CreateQuotesTable extends Migration
             $table->double('due_amount')->nullable();
             $table->unsignedInteger('business_id')->nullable();
             $table->longText('product_data')->nullable();
+            $table->longText('po')->nullable();
             $table->longText('sample_img')->nullable();
             $table->boolean('signature')->nullable();
             $table->enum('status', ['Paid', 'Unpaid', 'Partial Billed'])->nullable();
