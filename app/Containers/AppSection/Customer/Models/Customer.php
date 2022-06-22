@@ -2,6 +2,7 @@
 
 namespace App\Containers\AppSection\Customer\Models;
 
+use App\Containers\AppSection\Invoice\Models\Invoice;
 use App\Ship\Parents\Models\Model;
 
 class Customer extends Model
@@ -36,4 +37,9 @@ class Customer extends Model
      * A resource key to be used in the serialized responses.
      */
     protected string $resourceKey = 'Customer';
+
+    public function invoice()
+    {
+        return $this->hasMany(Invoice::class, 'customer_id', 'id');
+    }
 }
