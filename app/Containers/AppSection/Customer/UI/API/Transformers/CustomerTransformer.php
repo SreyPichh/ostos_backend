@@ -32,6 +32,7 @@ class CustomerTransformer extends Transformer
             'customer_email' => $customer->customer_email,
             'customer_phone_number' => $customer->customer_phone_number,
             'customer_phone_number_2' => $customer->customer_phone_number_2,
+            'gender' => $customer->gender,
             'customer_address1' => $customer->customer_address1,
             'customer_address2' => $customer->customer_address2,
             'created_at' => $customer->created_at,
