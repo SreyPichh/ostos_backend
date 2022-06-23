@@ -54,7 +54,7 @@ class Controller extends ApiController
         $customer = app(DeleteCustomerAction::class)->run($request);
         $type_action = 'Delete';
         $action_label = 'Customer';
-        app(CreateRecentActionAction::class)->run($customer->request, $type_action, $action_label);
+        app(CreateRecentActionAction::class)->run($customer, $type_action, $action_label);
         return $this->noContent();
     }
 }
