@@ -26,8 +26,8 @@ class CreateInvoicesTable extends Migration
             $table->double('total')->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('business_id')->references('id')->on('businesses')->onDelete('cascade');
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+            $table->foreign('business_id')->references('id')->on('businesses')->onDelete('set null');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('set null');
             //onDelete = when we delete user id ? the invoice belong to id ? will auto delete
         });
     }

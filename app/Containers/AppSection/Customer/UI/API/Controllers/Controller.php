@@ -49,6 +49,7 @@ class Controller extends ApiController
         return $this->transform($customer, CustomerTransformer::class);
     }
 
+
     public function deleteCustomer(DeleteCustomerRequest $request): JsonResponse
     {
         $customer = app(DeleteCustomerAction::class)->run($request);
@@ -57,4 +58,5 @@ class Controller extends ApiController
         app(CreateRecentActionAction::class)->run($customer, $type_action, $action_label);
         return $this->noContent();
     }
+
 }
