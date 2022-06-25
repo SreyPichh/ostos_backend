@@ -15,6 +15,7 @@ class Customer extends Model
         'customer_phone_number',
         'customer_phone_number_2',
         'gender',
+        'status',
         'customer_address1',
         'customer_address2',
     ];

@@ -20,6 +20,7 @@ class CreateCustomerAction extends Action
             'customer_phone_number' => $request->customer_phone_number,
             'customer_phone_number_2' => $request->customer_phone_number_2,
             'gender' => $request->gender,
+            'status' => $request->status,
             'customer_address1' => $request->customer_address1,
             'customer_address2' => $request->customer_address2
         ]);
