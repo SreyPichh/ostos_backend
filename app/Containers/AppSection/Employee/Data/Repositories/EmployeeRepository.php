@@ -11,6 +11,7 @@ class EmployeeRepository extends Repository
      */
     protected $fieldSearchable = [
         'id' => '=',
-        // ...
+        'name' => 'like',
+        'phone_number' => 'like'
     ];
 }
