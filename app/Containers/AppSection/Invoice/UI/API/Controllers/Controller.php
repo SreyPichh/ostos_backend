@@ -42,11 +42,11 @@ class Controller extends ApiController
         return $this->transform($invoices, InvoiceTransformer::class);
     }
 
-//    public function getLastId(GetLastIdRequest $request): array
-//    {
-//        $invoice = app(GetLastIdAction::class)->run($request);
-//        return $this->transform($invoice, InvoiceTransformer::class);
-//    }
+    public function getLastId(GetLastIdRequest $request): array
+    {
+        $invoice = app(GetLastIdAction::class)->run($request);
+        return $this->transform($invoice, InvoiceTransformer::class);
+    }
 
 //    public function getAllFilterInvoices(GetAllFilterInvoicesRequest $request): array
 //    {
