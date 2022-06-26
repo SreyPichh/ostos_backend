@@ -16,6 +16,6 @@ class GetAllInvoicesTask extends Task
 
     public function run()
     {
-        return $this->repository->paginate();
+        return $this->repository->orderBy('updated_at', 'desc')->paginate();
     }
 }
