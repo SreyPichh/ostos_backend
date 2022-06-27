@@ -2,6 +2,7 @@
 
 namespace App\Containers\AppSection\Invoice\Tasks;
 
+use App\Containers\AppSection\Invoice\Data\Repositories\InvoiceRepository;
 use App\Ship\Parents\Tasks\Task;
 
 class GetLastIdTask extends Task
