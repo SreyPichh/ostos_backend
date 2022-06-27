@@ -16,6 +16,6 @@ class GetAllBusinessesTask extends Task
 
     public function run()
     {
-        return $this->repository->paginate();
+        return $this->repository->OrderBy('updated_at', 'desc')->paginate();
     }
 }

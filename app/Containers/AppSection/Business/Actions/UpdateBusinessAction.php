@@ -13,19 +13,24 @@ class UpdateBusinessAction extends Action
     {
         $data = $request->sanitizeInput([
             // add your request data here
-            'name',
-            'logo',
-            'address',
-            'phone_number',
-            'email',
-            'aba_name',
-            'acc_number',
-            'qr_code',
-            'invoice_toptext',
-            'invoice_note',
-            'digital_sign',
-            'facebook_link',
-            'instagram_link'
+            'name' => $request->name,
+            'logo' => $request->logo,
+            'address' => $request->address,
+            'phone_number1' => $request->phone_number1,
+            'phone_number2' => $request->phone_number2,
+            'phone_number3' => $request->phone_number3,
+            'telegram' => $request->telegram,
+            'email' => $request->email,
+            'aba_name' => $request->aba_name,
+            'acc_number' => $request->acc_number,
+            'qr_code' => $request->qr_code,
+            'invoice_toptext' =>$request->invoice_toptext,
+            'invoice_note' => $request->invoice_note,
+            'personal_info' => $request->personal_info,
+            'quote_note' => $request->quote_note,
+            'digital_sign' => $request->digital_sign,
+            'facebook_link' => $request->facebook_link,
+            'instagram_link' => $request->instagram_link
         ]);
 
         return app(UpdateBusinessTask::class)->run($request->id, $data);
