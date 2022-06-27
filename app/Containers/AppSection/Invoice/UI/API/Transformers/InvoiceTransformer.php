@@ -39,6 +39,7 @@ class InvoiceTransformer extends Transformer
             'signature' => $invoice->signature,
             'status' => $invoice->status,
             'total' => $invoice->total,
+            'customer_info' => json_decode($invoice->customer_info),
             'created_at' => $invoice->created_at,
             'updated_at' => $invoice->updated_at,
             'readable_created_at' => $invoice->created_at->diffForHumans(),

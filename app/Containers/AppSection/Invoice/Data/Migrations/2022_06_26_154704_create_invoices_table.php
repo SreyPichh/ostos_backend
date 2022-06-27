@@ -25,6 +25,7 @@ class CreateInvoicesTable extends Migration
             $table->boolean('signature')->nullable();
             $table->enum('status', ['Paid', 'Unpaid', 'Partial Billed'])->nullable();
             $table->double('total')->nullable();
+            $table->longText('customer_info')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('business_id')->references('id')->on('businesses')->onDelete('set null');

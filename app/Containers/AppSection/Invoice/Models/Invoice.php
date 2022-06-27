@@ -19,7 +19,8 @@ class Invoice extends Model
         'invoice_note',
         'signature',
         'status',
-        'total'
+        'total',
+        'customer_info'
     ];
 
     protected $attributes = [

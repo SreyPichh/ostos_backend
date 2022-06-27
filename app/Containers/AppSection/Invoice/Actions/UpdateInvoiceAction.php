@@ -25,7 +25,8 @@ class UpdateInvoiceAction extends Action
             'invoice_note' => $request->invoice_note,
             'signature' => $request->signature,
             'status' => $request->status,
-            'total' => $request->total
+            'total' => $request->total,
+            'customer_info' => json_encode($request->customer_info)
         ];
 
         return app(UpdateInvoiceTask::class)->run($request->id, $data);
