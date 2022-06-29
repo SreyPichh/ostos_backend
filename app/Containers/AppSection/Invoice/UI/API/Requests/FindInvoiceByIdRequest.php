@@ -42,10 +42,10 @@ class FindInvoiceByIdRequest extends Request
     /**
      * Determine if the user is authorized to make this request.
      */
-    public function authorize(): bool
-    {
-        return $this->check([
-            'hasAccess',
-        ]);
-    }
+//    public function authorize(): bool
+//    {
+//        return $this->check([
+//            'hasAccess',
+//        ]);
+//    }
 }
