@@ -10,7 +10,7 @@ class FindInvoiceByIdRequest extends Request
      * Define which Roles and/or Permissions has access to this request.
      */
     protected array $access = [
-        'permissions' => null,
+        'permissions' => '',
         'roles'       => '',
     ];
 
@@ -45,7 +45,7 @@ class FindInvoiceByIdRequest extends Request
     public function authorize(): bool
     {
         return $this->check([
-//            'hasAccess',
+            'hasAccess',
         ]);
     }
 }

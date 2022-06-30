@@ -23,6 +23,6 @@ use App\Containers\AppSection\Invoice\UI\API\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 Route::get('invoices/{id}', [Controller::class, 'findInvoiceById'])
-    ->name('api_invoice_find_invoice_by_id');
-//    ->middleware(['auth:api']);
+    ->name('api_invoice_find_invoice_by_id')
+    ->middleware(['auth:api']);
 
