@@ -46,6 +46,7 @@ class BusinessTransformer extends Transformer
             'digital_sign' => $business->digital_sign,
             'facebook_link' => $business->facebook_link,
             'instagram_link' => $business->instagram_link,
+            'invoice_footer' => $business->invoice_footer,
             'created_at' => $business->created_at,
             'updated_at' => $business->updated_at,
             'readable_created_at' => $business->created_at->diffForHumans(),

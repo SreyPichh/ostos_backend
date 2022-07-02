@@ -32,7 +32,8 @@ class CreateBusinessAction extends Action
             'quote_note' => $request->quote_note,
             'digital_sign' => $request->digital_sign,
             'facebook_link' => $request->facebook_link,
-            'instagram_link' => $request->instagram_link
+            'instagram_link' => $request->instagram_link,
+            'invoice_footer' => $request->invoice_footer
         ]);
 
         return app(CreateBusinessTask::class)->run($data);

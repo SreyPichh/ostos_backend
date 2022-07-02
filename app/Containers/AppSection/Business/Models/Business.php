@@ -26,7 +26,8 @@ class Business extends Model
         'quote_note',
         'digital_sign',
         'facebook_link',
-        'instagram_link'
+        'instagram_link',
+        'invoice_footer'
     ];
 
     protected $attributes = [

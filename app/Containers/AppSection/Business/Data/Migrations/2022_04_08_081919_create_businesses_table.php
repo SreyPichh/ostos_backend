@@ -30,6 +30,7 @@ class CreateBusinessesTable extends Migration
             $table->longText('digital_sign')->nullable();
             $table->longText('facebook_link')->nullable();
             $table->longText('instagram_link')->nullable();
+            $table->longText('invoice_footer')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
