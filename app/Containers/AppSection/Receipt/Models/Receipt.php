@@ -9,7 +9,6 @@ class Receipt extends Model
     protected $fillable = [
         'date',
         'received_from',
-        'sumOf',
         'paymentOf',
         'amount',
         'type'

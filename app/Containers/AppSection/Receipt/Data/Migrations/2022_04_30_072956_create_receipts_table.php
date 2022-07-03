@@ -14,7 +14,6 @@ class CreateReceiptsTable extends Migration
             $table->increments('id');
             $table->timestamp('date')->nullable();
             $table->string('received_from')->nullable();
-            $table->string('sumOf')->nullable();
             $table->string('paymentOf')->nullable();
             $table->double('amount')->nullable();
             $table->enum('type', ['Cash', 'Cheque'])->nullable();

@@ -15,7 +15,6 @@ class CreateReceiptAction extends Action
             // add your request data here
             'date' => $request->date,
             'received_from' => $request->received_from,
-            'sumOf' => $request->sumOf,
             'paymentOf' => $request->paymentOf,
             'amount' => $request->amount,
             'type' => $request->type

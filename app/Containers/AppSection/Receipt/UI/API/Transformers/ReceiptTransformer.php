@@ -28,7 +28,6 @@ class ReceiptTransformer extends Transformer
             'id' => $receipt->getHashedKey(),
             'date' => $receipt->date,
             'received_from' => $receipt->received_from,
-            'sumOf' => $receipt->sumOf,
             'paymentOf' => $receipt->paymentOf,
             'amount' => $receipt->amount,
             'type' => $receipt->type,

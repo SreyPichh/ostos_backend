@@ -15,7 +15,6 @@ class UpdateReceiptAction extends Action
             // add your request data here
             'date',
             'received_from',
-            'sumOf',
             'paymentOf',
             'amount',
             'type'
