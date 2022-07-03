@@ -1,10 +1,10 @@
-get<?php
+<?php
 
 /**
  * @apiGroup           Invoice
  * @apiName            getAllInvoices
  *
- * @api                {GET} /v1/invoices Endpoint title here..
+ * @api                {GET} /v1/invoices/:id Endpoint title here..
  * @apiDescription     Endpoint description here..
  *
  * @apiVersion         1.0.0
@@ -22,7 +22,7 @@ get<?php
 use App\Containers\AppSection\Invoice\UI\API\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
-Route::get('invoices', [Controller::class, 'getAllInvoices'])
-    ->name('api_invoice_get_all_invoices')
-    ->middleware(['auth:api']);
+Route::get('invoices/{id}', [Controller::class, 'getAllInvoices'])
+    ->name('api_invoice_get_all_invoices');
+//    ->middleware(['auth:api']);
 
