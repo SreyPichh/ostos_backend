@@ -23,5 +23,7 @@ use App\Containers\AppSection\Invoice\UI\API\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 Route::get('invoices_public/{id}', [Controller::class, 'findInvoiceById'])
-    ->name('api_invoice_get_all_invoices');
+    ->name('api_invoice_get_all_invoices')
+    ->middleware('auth:api')
+    ->middleware(['auth:api']);
 
