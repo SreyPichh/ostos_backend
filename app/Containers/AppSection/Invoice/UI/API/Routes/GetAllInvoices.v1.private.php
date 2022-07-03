@@ -1,4 +1,4 @@
-get<?php
+<?php
 
 /**
  * @apiGroup           Invoice
