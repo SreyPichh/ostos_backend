@@ -13,10 +13,12 @@ class CreateReceiptsTable extends Migration
         Schema::create('receipts', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamp('date')->nullable();
-            $table->string('received_from')->nullable();
             $table->string('paymentOf')->nullable();
             $table->double('amount')->nullable();
             $table->enum('type', ['Cash', 'Cheque'])->nullable();
+            $table->string('no')->nullable();
+            $table->longText('customer_info')->nullable();
+            $table->boolean('signature')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

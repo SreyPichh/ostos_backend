@@ -8,10 +8,12 @@ class Receipt extends Model
 {
     protected $fillable = [
         'date',
-        'received_from',
         'paymentOf',
         'amount',
-        'type'
+        'type',
+        'no',
+        'customer_info',
+        'signature'
     ];
 
     protected $attributes = [

@@ -11,15 +11,16 @@ class CreateReceiptAction extends Action
 {
     public function run(Request $request): Receipt
     {
-        $data = $request->sanitizeInput([
+        $data = [
             // add your request data here
             'date' => $request->date,
-            'received_from' => $request->received_from,
             'paymentOf' => $request->paymentOf,
             'amount' => $request->amount,
-            'type' => $request->type
-        ]);
-
+            'type' => $request->type,
+            'no' => $request->no,
+            'customer_info' => json_encode($request->customer_info),
+            'signature' => $request->signature
+        ];
         return app(CreateReceiptTask::class)->run($data);
     }
 }

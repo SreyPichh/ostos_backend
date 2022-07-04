@@ -27,15 +27,16 @@ class ReceiptTransformer extends Transformer
             'object' => $receipt->getResourceKey(),
             'id' => $receipt->getHashedKey(),
             'date' => $receipt->date,
-            'received_from' => $receipt->received_from,
             'paymentOf' => $receipt->paymentOf,
             'amount' => $receipt->amount,
             'type' => $receipt->type,
+            'no' => $receipt->no,
+            'customer_info' => json_decode($receipt->customer_info),
+            'signature' => $receipt->signature,
             'created_at' => $receipt->created_at,
             'updated_at' => $receipt->updated_at,
             'readable_created_at' => $receipt->created_at->diffForHumans(),
             'readable_updated_at' => $receipt->updated_at->diffForHumans(),
-
         ];
 
         return $response = $this->ifAdmin([

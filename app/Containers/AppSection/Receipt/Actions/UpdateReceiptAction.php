@@ -11,14 +11,16 @@ class UpdateReceiptAction extends Action
 {
     public function run(Request $request): Receipt
     {
-        $data = $request->sanitizeInput([
+        $data = [
             // add your request data here
-            'date',
-            'received_from',
-            'paymentOf',
-            'amount',
-            'type'
-        ]);
+            'date' => $request->date,
+            'paymentOf' => $request->paymentOf,
+            'amount' => $request->amount,
+            'type' => $request->type,
+            'no' => $request->no,
+            'customer_info' => json_encode($request->customer_info),
+            'signature' => $request->signature
+        ];
 
         return app(UpdateReceiptTask::class)->run($request->id, $data);
     }

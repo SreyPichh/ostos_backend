@@ -36,11 +36,7 @@ class CreateReceiptRequest extends Request
     {
         return [
             // 'id' => 'required'
-            'received_from' => 'required',
-            'paymentOf' => 'required',
-            'type' => 'required',
-            'sumOf' => 'required',
-            'amount' => 'required'
+
         ];
     }
 
