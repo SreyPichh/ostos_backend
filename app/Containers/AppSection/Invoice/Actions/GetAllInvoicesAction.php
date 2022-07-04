@@ -13,7 +13,7 @@ class GetAllInvoicesAction extends Action
     {
         if($request->search == 'customer_id:null')
         {
-            return Invoice::where('customer_id', null)->paginate();
+            return Invoice::where('customer_id', null)->orderBy('updated_at', 'desc')->paginate();
         }
         return app(GetAllInvoicesTask::class)->addRequestCriteria()->run();
     }
