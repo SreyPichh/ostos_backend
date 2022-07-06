@@ -13,7 +13,9 @@ class Receipt extends Model
         'type',
         'no',
         'customer_info',
-        'signature'
+        'signature',
+        'business_id',
+        'status'
     ];
 
     protected $attributes = [
@@ -38,4 +40,9 @@ class Receipt extends Model
      * A resource key to be used in the serialized responses.
      */
     protected string $resourceKey = 'Receipt';
+
+    public function business()
+    {
+        return $this->belongsTo(Business::class, 'receipt_id', 'id');
+    }
 }
