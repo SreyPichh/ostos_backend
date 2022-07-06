@@ -10,10 +10,18 @@ use App\Ship\Parents\Requests\Request;
 class GetAllInvoicesAction extends Action
 {
     public function run(Request $request)
+
     {
         if($request->search == 'customer_id:null')
         {
-            return Invoice::where('customer_id', null)->orderBy('updated_at', 'desc')->paginate();
+            return Invoice::where('customer_id', null )->orderBy('updated_at', 'desc')->paginate();
+        }
+        if($request->search == 'customer_id:nullwithstatus:Unpaid'){
+            return Invoice::where(['customer_id' => null, 'status' => 'Unpaid'])->paginate();
+        }
+        if($request->search == 'customer_id:nullwithstatus:Paid')
+        {
+            return Invoice::where(['customer_id' => null, 'status' => 'Paid'])->paginate();
         }
         return app(GetAllInvoicesTask::class)->addRequestCriteria()->run();
     }
