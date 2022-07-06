@@ -33,6 +33,8 @@ class ReceiptTransformer extends Transformer
             'no' => $receipt->no,
             'customer_info' => json_decode($receipt->customer_info),
             'signature' => $receipt->signature,
+            'business_id' => $receipt->business_id,
+            'status' => $receipt->status,
             'created_at' => $receipt->created_at,
             'updated_at' => $receipt->updated_at,
             'readable_created_at' => $receipt->created_at->diffForHumans(),

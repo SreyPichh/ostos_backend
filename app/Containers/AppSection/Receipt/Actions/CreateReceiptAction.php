@@ -19,7 +19,9 @@ class CreateReceiptAction extends Action
             'type' => $request->type,
             'no' => $request->no,
             'customer_info' => json_encode($request->customer_info),
-            'signature' => $request->signature
+            'signature' => $request->signature,
+            'business_id' => $request->business_id,
+            'status' => $request->status
         ];
         return app(CreateReceiptTask::class)->run($data);
     }
