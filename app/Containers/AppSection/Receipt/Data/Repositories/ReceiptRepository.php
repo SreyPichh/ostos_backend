@@ -11,6 +11,11 @@ class ReceiptRepository extends Repository
      */
     protected $fieldSearchable = [
         'id' => '=',
-        // ...
+        'date',
+        'paymentOf',
+        'type',
+        'customer_info' => 'like',
+        'status',
+        'business_id'
     ];
 }
