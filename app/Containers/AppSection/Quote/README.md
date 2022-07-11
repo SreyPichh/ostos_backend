@@ -1,2 +1,0 @@
-### Apiato Quote Container
-
