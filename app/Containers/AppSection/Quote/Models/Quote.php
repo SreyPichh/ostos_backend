@@ -45,4 +45,13 @@ class Quote extends Model
      * A resource key to be used in the serialized responses.
      */
     protected string $resourceKey = 'Quote';
+
+    public function business()
+    {
+        return $this->belongsTo(Business::class, 'quote_id', 'id');
+    }
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class, 'quote_id', 'id');
+    }
 }
