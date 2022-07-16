@@ -42,7 +42,7 @@ class Controller extends ApiController
     }
     public function getLastIdReciept(GetAllReceiptsRequest $request): array
     {
-        $receipts = app(GetLastIdReceiptAction::class)->run();
+        $receipts = app(getLastIdReceiptAction::class)->run();
         return $this->transform($receipts, ReceiptTransformer::class);
     }
 

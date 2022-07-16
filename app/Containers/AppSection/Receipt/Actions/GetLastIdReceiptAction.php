@@ -5,7 +5,7 @@ namespace App\Containers\AppSection\Receipt\Actions;
 use App\Containers\AppSection\Receipt\Tasks\GetLastIdReceiptTask;
 use App\Ship\Parents\Actions\Action;
 
-class GetLastIdReceiptAction extends Action
+class getLastIdReceiptAction extends Action
 {
     public function run()
     {
