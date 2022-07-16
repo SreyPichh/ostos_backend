@@ -2,7 +2,7 @@
 
 namespace App\Containers\AppSection\Receipt\UI\API\Controllers;
 
-use App\Containers\AppSection\Receipt\Actions\getLastIdReceiptAction;
+use App\Containers\AppSection\Receipt\Actions\GetLastIdReceiptAction;
 use App\Containers\AppSection\Receipt\UI\API\Requests\CreateReceiptRequest;
 use App\Containers\AppSection\Receipt\UI\API\Requests\DeleteReceiptRequest;
 use App\Containers\AppSection\Receipt\UI\API\Requests\GetAllReceiptsRequest;
@@ -42,7 +42,7 @@ class Controller extends ApiController
     }
     public function getLastIdReciept(GetAllReceiptsRequest $request): array
     {
-        $receipts = app(getLastIdReceiptAction::class)->run();
+        $receipts = app(GetLastIdReceiptAction::class)->run();
         return $this->transform($receipts, ReceiptTransformer::class);
     }
 
