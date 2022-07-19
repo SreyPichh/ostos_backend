@@ -31,7 +31,7 @@ class InvoiceTransformer extends Transformer
             'customer_id' => $invoice->customer_id,
             'po' => $invoice->po,
             'date' => $invoice->date,
-            'due_amount' => $invoice->due_amount,
+            'due_amount' => number_format($invoice->due_amount, 2),
             'employee_data' => json_decode($invoice->employee_data),
             'product_data' => json_decode($invoice->product_data),
             'sample_img' => $invoice->sample_img,
