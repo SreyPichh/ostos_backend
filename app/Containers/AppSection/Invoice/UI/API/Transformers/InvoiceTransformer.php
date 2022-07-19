@@ -38,7 +38,7 @@ class InvoiceTransformer extends Transformer
             'invoice_note' => $invoice->invoice_note,
             'signature' => $invoice->signature,
             'status' => $invoice->status,
-            'total' => $invoice->total,
+            'total' => number_format($invoice->total, 2),
             'customer_info' => json_decode($invoice->customer_info),
             'created_at' => $invoice->created_at,
             'updated_at' => $invoice->updated_at,
