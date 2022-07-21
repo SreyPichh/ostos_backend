@@ -26,6 +26,7 @@ class ReceiptTransformer extends Transformer
         $response = [
             'object' => $receipt->getResourceKey(),
             'id' => $receipt->getHashedKey(),
+            'receipt_number' => $receipt->receipt_number,
             'date' => $receipt->date,
             'paymentOf' => $receipt->paymentOf,
             'amount' => number_format($receipt->amount, 2),

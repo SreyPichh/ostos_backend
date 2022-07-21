@@ -7,6 +7,7 @@ use App\Ship\Parents\Models\Model;
 class Receipt extends Model
 {
     protected $fillable = [
+        'receipt_number',
         'date',
         'paymentOf',
         'amount',

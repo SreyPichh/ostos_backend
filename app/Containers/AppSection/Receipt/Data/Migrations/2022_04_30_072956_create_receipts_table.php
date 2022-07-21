@@ -12,6 +12,7 @@ class CreateReceiptsTable extends Migration
     {
         Schema::create('receipts', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('receipt_number')->nullable();
             $table->timestamp('date')->nullable();
             $table->string('paymentOf')->nullable();
             $table->double('amount')->nullable();
