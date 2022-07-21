@@ -21,6 +21,7 @@ class CreateReceiptsTable extends Migration
             $table->boolean('signature')->nullable();
             $table->unsignedInteger('business_id')->nullable();
             $table->enum('status', ['Paid', 'Unpaid', 'Partial Billed'])->nullable();
+            $table->string('receipt_note')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('business_id')->references('id')->on('businesses')->onDelete('set null');

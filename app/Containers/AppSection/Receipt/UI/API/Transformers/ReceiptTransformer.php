@@ -35,6 +35,7 @@ class ReceiptTransformer extends Transformer
             'signature' => $receipt->signature,
             'business_id' => $receipt->business_id,
             'status' => $receipt->status,
+            'receipt_note' => $receipt->receipt_note,
             'created_at' => $receipt->created_at,
             'updated_at' => $receipt->updated_at,
             'readable_created_at' => $receipt->created_at->diffForHumans(),

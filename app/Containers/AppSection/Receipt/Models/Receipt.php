@@ -15,7 +15,8 @@ class Receipt extends Model
         'customer_info',
         'signature',
         'business_id',
-        'status'
+        'status',
+        'receipt_note'
     ];
 
     protected $attributes = [
