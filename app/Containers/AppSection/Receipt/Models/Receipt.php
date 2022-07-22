@@ -7,6 +7,7 @@ use App\Ship\Parents\Models\Model;
 class Receipt extends Model
 {
     protected $fillable = [
+        'customer_id',
         'receipt_number',
         'date',
         'paymentOf',
@@ -46,5 +47,9 @@ class Receipt extends Model
     public function business()
     {
         return $this->belongsTo(Business::class, 'receipt_id', 'id');
+    }
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class, 'receipt_id', 'id');
     }
 }
