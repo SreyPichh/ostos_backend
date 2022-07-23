@@ -30,7 +30,7 @@ class ReceiptTransformer extends Transformer
             'receipt_number' => $receipt->receipt_number,
             'date' => $receipt->date,
             'paymentOf' => $receipt->paymentOf,
-            'amount' => number_format($receipt->amount, 2),
+            'amount' =>$receipt->amount,
             'type' => $receipt->type,
             'no' => $receipt->no,
             'customer_info' => json_decode($receipt->customer_info),

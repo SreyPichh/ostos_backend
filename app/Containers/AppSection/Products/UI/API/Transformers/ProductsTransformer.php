@@ -30,7 +30,7 @@ class ProductsTransformer extends Transformer
             'business_id' => $products->business_id,
             'isActive' => $products->isActive,
             'isFavorite' => $products->isFavorite,
-            'price' => number_format($products->price, 2),
+            'price' => $products->price,
             'description' => $products->description,
             'created_at' => $products->created_at,
             'updated_at' => $products->updated_at,
