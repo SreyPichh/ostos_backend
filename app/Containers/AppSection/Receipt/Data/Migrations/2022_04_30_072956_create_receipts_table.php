@@ -17,7 +17,7 @@ class CreateReceiptsTable extends Migration
             $table->timestamp('date')->nullable();
             $table->string('paymentOf')->nullable();
             $table->double('amount')->nullable();
-            $table->enum('type', ['Cash', 'Cheque'])->nullable();
+            $table->enum('type', ['Cash', 'Cheque', 'eBanking'])->nullable();
             $table->string('no')->nullable();
             $table->longText('customer_info')->nullable();
             $table->boolean('signature')->nullable();
